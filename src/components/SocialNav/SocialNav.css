@@ -1,0 +1,16 @@
+.SocialNav {
+  width: 112px;
+}
+
+.SocialNav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.SocialNav img {
+  width: 24px;
+}

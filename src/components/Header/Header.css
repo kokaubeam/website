@@ -1,0 +1,59 @@
+.Header header {
+  height: 40px;
+  border-bottom: 1px solid #4A4A4A;
+}
+
+.Header #primary-nav-toggle {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.Header .brand {
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 8px;
+  margin: 0;
+}
+
+.Header a.brand:link,
+.Header a.brand:active,
+.Header a.brand:hover,
+.Header a.brand:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Header .brand.regular {
+  display: none;
+}
+
+.Header .brand.compact {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 21px)
+}
+
+.Header .nav.social {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+@media (min-width: 768px) {
+  .Header .brand.regular {
+    display: block;
+  }
+
+  .Header .brand.compact {
+    display: none;
+  }
+
+  .Header #primary-nav-toggle {
+    display: none;
+  }
+}

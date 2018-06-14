@@ -1,0 +1,44 @@
+.Home {
+  background: #000;
+}
+
+.Home main {
+  padding: 16px;
+  text-align: center;
+}
+
+.Home .me {
+  border-radius: 96px;
+  border: 4px solid #979797;
+  width: 192px;
+  max-width: 100%;
+}
+
+.Home .laptop {
+  margin-bottom: -12%;
+  width: 90%;
+}
+
+.Home .introduction {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 440px;
+}
+
+.Home .greeting {
+  font-family: 'Open Sans';
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .Home .greeting {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Home .laptop {
+    margin-bottom: -128px;
+    width: 922px;
+  }
+}
