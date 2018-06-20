@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { headerNavToggle, headerNavClose } from './actions'
 import { isNavOpenSelector } from './selectors'
 import SocialNav from '../SocialNav'
@@ -26,6 +26,7 @@ export const Header = ({ isNavOpen, toggleNav, closeNav }) => (
 
       <nav id="primary-nav" className={classNames('nav primary', { open: isNavOpen })} aria-labelledby="primary-nav-toggle">
         <ul>
+          <li><NavLink to="/stack">Stack</NavLink></li>
         </ul>
       </nav>
 

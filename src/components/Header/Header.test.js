@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { headerNavToggle, headerNavClose } from './actions'
 import { isNavOpenSelector } from './selectors'
 import SocialNav from '../SocialNav'
@@ -42,6 +42,11 @@ describe('Header component', () => {
       expect(nav).toExist()
       expect(nav.prop('aria-labelledby')).toBe('primary-nav-toggle')
       expect(nav.prop('className')).toBe('nav primary')
+    })
+
+    it('should a link to the stack page', () => {
+      const link = component.find(NavLink).filterWhere(n => n.prop('to') === '/stack')
+      expect(link).toExist()
     })
 
     it('should render the social nav', () => {
