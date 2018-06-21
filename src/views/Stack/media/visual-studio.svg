@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="63" viewBox="0 0 58 63">
+  <defs>
+    <linearGradient id="visual-studio-a" x1="43.024%" x2="0%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A61C8"/>
+      <stop offset="100%" stop-color="#BB7DF7"/>
+    </linearGradient>
+    <linearGradient id="visual-studio-d" x1="24.609%" x2="62.47%" y1="19.887%" y2="60.933%">
+      <stop offset="0%" stop-color="#A071D7"/>
+      <stop offset="100%" stop-color="#A776DC"/>
+    </linearGradient>
+    <polygon id="visual-studio-c" points="8.827 23.801 33.171 41.932 39.723 37.815 12.241 22.639"/>
+    <filter id="visual-studio-b" width="112.9%" height="120.7%" x="-6.5%" y="-5.2%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.29724298 0"/>
+    </filter>
+    <polygon id="visual-studio-f" points="11.034 38.146 28.758 13.243 36.229 15.102 14.632 38.179"/>
+    <filter id="visual-studio-e" width="115.9%" height="116%" x="-7.9%" y="-4%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.300866168 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#000" fill-rule="nonzero" d="M52.9254797,53.232768 L44.6300977,3.45171608 C44.3747862,1.91956579 42.9262577,0.890067641 41.3822753,1.14342532 L2.36472265,7.54595641 C0.820742511,7.79931255 -0.216702896,9.23674372 0.038610759,10.7688938 L8.33399503,60.5499487 C8.58930869,62.0820966 10.0378372,63.111595 11.5818163,62.8582367 L50.5993666,56.4557076 C52.1433589,56.2023492 53.1807989,54.7649214 52.9254797,53.232768 Z" opacity=".2"/>
+    <path fill="#3F3F3F" fill-rule="nonzero" d="M52.9254797,52.1293782 L44.6300977,2.34832728 C44.3747862,0.816176993 42.9262577,-0.213321159 41.3822753,0.0400365241 L2.36472265,6.44256728 C0.820742511,6.69592386 -0.216702896,8.13335393 0.038610759,9.665504 L8.33399503,59.44656 C8.58930869,60.9787079 10.0378372,62.0082063 11.5818163,61.754848 L50.5993666,55.3523189 C52.1433589,55.0989606 53.1807989,53.6615327 52.9254797,52.1293782 Z"/>
+    <path fill="#FFF" fill-rule="nonzero" d="M41.954741,0.00431028966 C41.7668701,-0.00258537931 41.5744629,0.00927856552 41.3814654,0.0409483034 L2.36422411,6.44181032 C0.820243972,6.6951669 -0.216520607,8.13379862 0.0387930483,9.66594869 L0.0581896828,9.78879338 C0.272064883,8.66605462 1.15889942,7.74304331 2.36422411,7.54525903 L41.3814654,1.14439658 C42.9254477,0.891038897 44.3739983,1.92043597 44.6293098,3.45258615 L52.9051719,53.1163796 C52.966421,52.7989837 52.9809545,52.4676789 52.9245694,52.1293109 L44.6293098,2.34913788 C44.4059123,1.00850637 43.2698372,0.0525801931 41.954741,0.00431028966 Z" opacity=".1"/>
+    <polygon fill="#774BBD" fill-rule="nonzero" points="9.269 44.138 45.108 44.138 46.378 52.966"/>
+    <polygon fill="#000" fill-rule="nonzero" points="38.62 5.519 51.097 8.323 57.378 47.626 46.378 54.069" opacity=".2"/>
+    <polygon fill="url(#visual-studio-a)" fill-rule="nonzero" points="38.62 4.415 51.097 7.22 57.378 46.523 46.378 52.966"/>
+    <polygon fill="#7D53C0" fill-rule="nonzero" points="28.758 13.243 36.229 15.102 39.723 37.815 33.171 41.932"/>
+    <polygon fill="#7D53C0" fill-rule="nonzero" points="8.846 23.812 12.22 22.649 14.603 38.198 11.08 38.198"/>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#visual-studio-b)" xlink:href="#visual-studio-c"/>
+      <use fill="url(#visual-studio-d)" fill-rule="evenodd" xlink:href="#visual-studio-c"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#visual-studio-e)" xlink:href="#visual-studio-f"/>
+      <use fill="#AC79E6" fill-rule="evenodd" xlink:href="#visual-studio-f"/>
+    </g>
+  </g>
+</svg>
