@@ -9,18 +9,18 @@ describe('Stack data', () => {
     expect(data.length).toBeGreaterThan(0)
   })
 
-  it('should contain all required attributes on the Stacks', () => {
+  it('should contain all required attributes on each stack', () => {
     data.forEach(stack => {
       expect(stack).toMatchObject({
         name: expect.any(String),
-        tools: expect.any(Array)
+        items: expect.any(Array)
       })
     })
   })
 
-  it('should contain all the required attributes on the Tools', () => {
-    data.forEach(stack => stack.tools.forEach(tool => {
-      expect(tool).toMatchObject({
+  it('should contain all the required attributes on each stack item', () => {
+    data.forEach(stack => stack.items.forEach(item => {
+      expect(item).toMatchObject({
         name: expect.any(String),
         logo: expect.any(String)
       })

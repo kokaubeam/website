@@ -32,7 +32,7 @@ import restLogo from './media/rest.svg'
 
 export default [{
   name: 'Toolkit',
-  tools: [{
+  items: [{
     name: 'Sketch',
     logo: sketchLogo
   }, {
@@ -89,7 +89,7 @@ export default [{
   }]
 }, {
   name: 'Data',
-  tools: [{
+  items: [{
     name: 'Cassandra',
     logo: cassandraLogo
   }, {
@@ -107,7 +107,7 @@ export default [{
   }]
 }, {
   name: 'Infrastructure',
-  tools: [{
+  items: [{
     name: 'Git',
     logo: gitLogo
   }, {
@@ -127,8 +127,8 @@ export default [{
     logo: ciCdLogo
   }]
 }, {
-  name: 'Business Tools',
-  tools: [{
+  name: 'Business items',
+  items: [{
     name: 'Slack',
     logo: slackLogo
   }, {
