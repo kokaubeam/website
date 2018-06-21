@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import { Link, NavLink } from 'react-router-dom'
 import { headerNavToggle, headerNavClose } from './actions'
 import { isNavOpenSelector } from './selectors'
-import SocialNav from '../SocialNav'
+import SocialNav from './components/SocialNav'
 
 jest.mock('./selectors')
 
