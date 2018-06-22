@@ -16,7 +16,7 @@ describe('Page component', () => {
     component = shallow(<Page {...props} />)
   })
 
-  it.only('should render', () => {
+  it('should render', () => {
     expect(component).toExist()
   })
 
