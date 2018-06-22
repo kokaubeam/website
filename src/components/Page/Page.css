@@ -1,3 +1,12 @@
 .Page {
+  box-sizing: border-box;
+  padding-top: 41px;
   min-height: 100%;
+}
+
+.Page .Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Link, NavLink } from 'react-router-dom'
-import { headerNavToggle, headerNavClose } from './actions'
+import { Link } from 'react-router-dom'
+import { headerNavToggle } from './actions'
 import { isNavOpenSelector } from './selectors'
+import PrimaryNav from './components/PrimaryNav'
 import SocialNav from './components/SocialNav'
 
 jest.mock('./selectors')
@@ -38,15 +39,11 @@ describe('Header component', () => {
     })
 
     it('should render the primary nav', () => {
-      const nav = component.find('#primary-nav')
+      const nav = component.find(PrimaryNav)
       expect(nav).toExist()
+      expect(nav.prop('id')).toBe('primary-nav')
       expect(nav.prop('aria-labelledby')).toBe('primary-nav-toggle')
       expect(nav.prop('className')).toBe('nav primary')
-    })
-
-    it('should a link to the stack page', () => {
-      const link = component.find(NavLink).filterWhere(n => n.prop('to') === '/stack')
-      expect(link).toExist()
     })
 
     it('should render the social nav', () => {
@@ -72,25 +69,8 @@ describe('Header component', () => {
         })
       })
 
-      it('should add the "open" class to the primary nav', () => {
-        const nav = component.find('#primary-nav')
-        expect(nav.prop('className')).toBe('nav primary open')
-      })
-
-      it('should render the backdrop', () => {
-        const backdrop = component.find('#backdrop')
-        expect(backdrop).toExist()
-      })
-
-      describe('when the backdrop is clicked', () => {
-        beforeAll(() => {
-          const backdrop = component.find('#backdrop')
-          backdrop.simulate('click')
-        })
-
-        it('should close the nav', () => {
-          expect(props.closeNav).toHaveBeenCalled()
-        })
+      it('should add the "open" class to the header', () => {
+        expect(component.prop('className')).toContain('open')
       })
     })
   })
@@ -134,18 +114,7 @@ describe('Header component', () => {
 
     it('should map dispatch to props', () => {
       expect(map).toEqual({
-        closeNav: expect.any(Function),
         toggleNav: expect.any(Function)
-      })
-    })
-
-    describe('#closeNav', () => {
-      beforeAll(() => {
-        map.closeNav()
-      })
-
-      it('should dispatch a headerNavClose action', () => {
-        expect(mockDispatch).toHaveBeenCalledWith(headerNavClose())
       })
     })
 

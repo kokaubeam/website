@@ -2,44 +2,37 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
-import { headerNavToggle, headerNavClose } from './actions'
+import { Link } from 'react-router-dom'
+import { headerNavToggle } from './actions'
 import { isNavOpenSelector } from './selectors'
+import PrimaryNav from './components/PrimaryNav'
 import SocialNav from './components/SocialNav'
 import menuIcon from './media/menuIcon.svg'
 import './Header.css'
 
-export const Header = ({ isNavOpen, toggleNav, closeNav }) => (
-  <div className="Header">
-    <header>
-      <Link className="brand regular" to="/">Jonathan Davis</Link>
-      <Link className="brand compact" to="/">JD</Link>
+export const Header = ({ isNavOpen, toggleNav, className }) => (
+  <header className={classNames('Header', { open: isNavOpen }, className)}>
+    <Link className="brand regular" to="/">Jonathan Davis</Link>
+    <Link className="brand compact" to="/">JD</Link>
 
-      <button
-        id="primary-nav-toggle"
-        type="button"
-        onClick={toggleNav}
-        aria-haspopup="true"
-        aria-controls="primary-nav">
-        <img src={menuIcon} alt="Navigation" />
-      </button>
+    <button
+      id="primary-nav-toggle"
+      type="button"
+      onClick={toggleNav}
+      aria-haspopup="true"
+      aria-controls="primary-nav">
+      <img src={menuIcon} alt="Navigation" />
+    </button>
 
-      <nav id="primary-nav" className={classNames('nav primary', { open: isNavOpen })} aria-labelledby="primary-nav-toggle">
-        <ul>
-          <li><NavLink to="/stack">Stack</NavLink></li>
-        </ul>
-      </nav>
-
-      <SocialNav className="nav social" />
-    </header>
-    { isNavOpen && <div id="backdrop" className="backdrop" onClick={closeNav}></div> }
-  </div>
+    <PrimaryNav id="primary-nav" className="nav primary" aria-labelledby="primary-nav-toggle" />
+    <SocialNav className="nav social" />
+  </header>
 )
 
 Header.propTypes = {
   isNavOpen: PropTypes.bool,
-  closeNav: PropTypes.func.isRequired,
-  toggleNav: PropTypes.func.isRequired
+  toggleNav: PropTypes.func.isRequired,
+  className: PropTypes.string
 }
 
 export const mapStateToProps = state => ({
@@ -47,7 +40,6 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  closeNav: () => dispatch(headerNavClose()),
   toggleNav: () => dispatch(headerNavToggle())
 })
 
