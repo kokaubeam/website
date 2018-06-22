@@ -25,4 +25,12 @@ describe('Stack component', () => {
     const stacks = component.find(StackList)
     expect(stacks.length).toBe(data.length)
   })
+
+  it('should set the properties on each StackList', () => {
+    const stacks = component.find(StackList)
+    stacks.forEach((stack, index) => {
+      expect(stack.prop('name')).toBe(data[index].name)
+      expect(stack.prop('items')).toBe(data[index].items)
+    })
+  })
 })
