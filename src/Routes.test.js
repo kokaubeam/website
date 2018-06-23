@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { shallow } from 'enzyme'
 
 import Home from './views/Home'
+import WorkHistory from './views/WorkHistory'
 import Stack from './views/Stack'
 import NotFound from './views/NotFound'
 
@@ -32,6 +33,23 @@ describe('Routes', () => {
 
     it('should render the Home component', () => {
       expect(route.prop('component')).toBe(Home)
+    })
+
+    it('should match the exact path', () => {
+      expect(route.prop('exact')).toBe(true)
+    })
+  })
+
+  describe('/work-history', () => {
+    let route
+
+    beforeAll(() => {
+      route = component.find(Route)
+        .filterWhere(n => n.prop('path') === '/work-history')
+    })
+
+    it('should render the WorkHistory component', () => {
+      expect(route.prop('component')).toBe(WorkHistory)
     })
 
     it('should match the exact path', () => {
