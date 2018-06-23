@@ -7,12 +7,14 @@ describe('WorkHistoryItem component', () => {
   let component
 
   const props = {
-    name: 'Insuricare',
-    position: 'Insurance Agent',
-    description: 'Exploiting every loophole, dodging every obstacle! Penetrating the bureaucracy!',
-    logo: './media/insuricare.svg',
-    start: new Date('Feb 2012'),
-    end: new Date('Mar 2015')
+    history: {
+      name: 'Insuricare',
+      position: 'Insurance Agent',
+      description: 'Exploiting every loophole, dodging every obstacle! Penetrating the bureaucracy!',
+      logo: './media/insuricare.svg',
+      start: new Date('Feb 2012'),
+      end: new Date('Mar 2015')
+    }
   }
 
   beforeAll(() => {
@@ -24,23 +26,23 @@ describe('WorkHistoryItem component', () => {
   })
 
   it('should render the name', () => {
-    expect(component.text()).toContain(props.name)
+    expect(component.text()).toContain(props.history.name)
   })
 
   it('should render the position', () => {
-    expect(component.text()).toContain(props.position)
+    expect(component.text()).toContain(props.history.position)
   })
 
   it('should render the description', () => {
-    expect(component.text()).toContain(props.description)
+    expect(component.text()).toContain(props.history.description)
   })
 
   it('should render the logo', () => {
     const image = component.find('img')
-    expect(image.prop('src')).toEqual(props.logo)
+    expect(image.prop('src')).toEqual(props.history.logo)
   })
 
   it('should render the timespan', () => {
-    expect(component.text()).toContain(`${props.start} – ${props.end}`)
+    expect(component.text()).toContain(`${props.history.start} – ${props.history.end}`)
   })
 })

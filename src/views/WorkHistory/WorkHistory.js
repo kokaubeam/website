@@ -8,14 +8,9 @@ export const WorkHistory = () => (
   <Page className="WorkHistory">
     <main>
       <h1>Work History</h1>
-      {data.sort((a, b) => a.start < b.start).map(history => <WorkHistoryItem
+      {data.sort((a, b) => b.start - a.start).map(history => <WorkHistoryItem
         key={history.name}
-        name={history.name}
-        position={history.position}
-        description={history.description}
-        logo={history.logo}
-        start={history.start}
-        end={history.end} />
+        history={history} />
       )}
     </main>
   </Page>

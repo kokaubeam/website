@@ -9,7 +9,12 @@ describe('WorkHistory component', () => {
   let component
 
   beforeAll(() => {
+    jest.spyOn(data, 'sort')
     component = shallow(<WorkHistory />)
+  })
+
+  afterAll(() => {
+    data.sort.mockRestore()
   })
 
   it('should render', () => {
@@ -29,8 +34,24 @@ describe('WorkHistory component', () => {
   it('should set the properties on each WorkHistoryItem', () => {
     const histories = component.find(WorkHistoryItem)
     histories.forEach((history, index) => {
-      expect(history.prop('name')).toBe(data[index].name)
-      expect(history.prop('logo')).toBe(data[index].logo)
+      expect(history.prop('history')).toBe(data[index])
     })
+  })
+
+  it('should have sorted the work history to show the most recent history first', () => {
+    expect(data.sort).toHaveBeenCalled()
+
+    const sortFunction = data.sort.mock.calls[0][0]
+    const toSort = [{
+      start: new Date('2010')
+    }, {
+      start: new Date('2020')
+    }, {
+      start: new Date('2015')
+    }]
+
+    toSort.sort(sortFunction)
+
+    expect(toSort[0].start).toEqual(new Date('2020'))
   })
 })
