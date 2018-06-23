@@ -2,6 +2,8 @@
 
 My personal website to present ideas and represent my professional credentials.
 
+Visit the site at https://jonathan.obj.co.
+
 ## Setup a Development Environment
 
 - Install [Git](https://git-scm.com/)
