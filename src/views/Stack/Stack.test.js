@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import data from './data'
 import StackList from './components/StackList'
+import Bio from '../../components/Bio'
 
 import { Stack } from './Stack'
 
@@ -32,5 +33,10 @@ describe('Stack component', () => {
       expect(stack.prop('name')).toBe(data[index].name)
       expect(stack.prop('items')).toBe(data[index].items)
     })
+  })
+
+  it('should render the bio', () => {
+    const bio = component.find(Bio)
+    expect(bio).toExist()
   })
 })

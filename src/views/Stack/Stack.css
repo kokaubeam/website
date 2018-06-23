@@ -1,3 +1,22 @@
+.Stack {
+  display: flex;
+}
+
 .Stack main {
+  margin: 0 16px 16px;
+}
+
+.Stack aside {
+  display: none;
+  flex-shrink: 0;
+  flex-grow: 0;
   margin: 16px;
+  width: 288px;
+}
+
+@media (min-width: 768px) {
+  .Stack aside {
+    display: block;
+
+  }
 }
