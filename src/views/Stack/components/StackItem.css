@@ -4,13 +4,6 @@
   text-align: center;
 }
 
-.StackItem img {
-  display: block;
-  margin: auto;
-  max-width: 32px;
-  max-height: 32px;
-}
-
 .StackItem .logo {
   display: flex;
   align-items: center;
@@ -18,11 +11,18 @@
   width: 32px;
 }
 
+.StackItem .logo img {
+  display: block;
+  margin: auto;
+  max-width: 32px;
+  max-height: 32px;
+}
+
 .StackItem .name {
   display: none;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
   .StackItem {
     position: relative;
     margin: 16px;
@@ -30,16 +30,14 @@
     width: 64px;
   }
 
-  .StackItem img {
-    display: block;
-    margin: auto;
-    max-width: 64px;
-    max-height: 64px;
-  }
-
   .StackItem .logo {
     height: 64px;
     width: 64px;
+  }
+
+  .StackItem .logo img {
+    max-width: 64px;
+    max-height: 64px;
   }
 
   .StackItem .name {
