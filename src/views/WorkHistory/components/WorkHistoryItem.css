@@ -1,0 +1,68 @@
+.WorkHistoryItem {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 44px;
+}
+
+.WorkHistoryItem .logo,
+.WorkHistoryItem .name,
+.WorkHistoryItem .position,
+.WorkHistoryItem .timespan {
+  display: block;
+}
+
+.WorkHistoryItem .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+}
+
+.WorkHistoryItem .logo img {
+  display: block;
+  margin: auto;
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.WorkHistoryItem .name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.WorkHistoryItem .position {
+  font-size: 14px;
+}
+
+.WorkHistoryItem .timespan {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  color: #4A90E2;
+}
+
+.WorkHistoryItem .position,
+.WorkHistoryItem .description {
+  color: rgba(255, 255, 255, 0.7)
+}
+
+@media (min-width: 768px) {
+  .WorkHistoryItem {
+    padding-left: 80px;
+  }
+
+  .WorkHistoryItem .logo {
+    height: 64px;
+    width: 64px;
+  }
+
+  .WorkHistoryItem .logo img {
+    max-width: 64px;
+    max-height: 64px;
+  }
+}
