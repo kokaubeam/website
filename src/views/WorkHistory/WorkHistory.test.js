@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import data from './data'
 import WorkHistoryItem from './components/WorkHistoryItem'
+import Bio from '../../components/Bio'
 
 import { WorkHistory } from './WorkHistory'
 
@@ -53,5 +54,10 @@ describe('WorkHistory component', () => {
     toSort.sort(sortFunction)
 
     expect(toSort[0].start).toEqual(new Date('2020'))
+  })
+
+  it('should render the bio', () => {
+    const bio = component.find(Bio)
+    expect(bio).toExist()
   })
 })
