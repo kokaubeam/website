@@ -1,3 +1,63 @@
 .WorkHistory main {
   margin: 16px;
 }
+
+.WorkHistory ul.WorkHistoryList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.WorkHistory ul.WorkHistoryList ul li {
+  margin-bottom: 16px;
+}
+
+.WorkHistory ul.WorkHistoryList li {
+  animation: 200ms ease-out 100ms backwards WorkHistory-item-appear;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(7) {
+  animation-delay: 700ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(8) {
+  animation-delay: 800ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(9) {
+  animation-delay: 900ms;
+}
+
+.WorkHistory ul.WorkHistoryList li:nth-child(10) {
+  animation-delay: 1s;
+}
+
+@keyframes WorkHistory-item-appear {
+  from {
+    opacity: 0.0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1.0;
+    transform: translateX(0);
+  }
+}
