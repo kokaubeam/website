@@ -42,7 +42,7 @@ describe('WorkHistoryItem component', () => {
     expect(image.prop('src')).toEqual(props.history.logo)
   })
 
-  it('should render the timespan', () => {
-    expect(component.text()).toContain(`${props.history.start} – ${props.history.end}`)
+  it('should render a formatted timespan', () => {
+    expect(component.text()).toContain('Feb 2012 – Mar 2015')
   })
 })

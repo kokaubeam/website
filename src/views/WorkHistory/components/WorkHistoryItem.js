@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import moment from 'moment'
 import './WorkHistoryItem.css'
 
 export const WorkHistoryItem = ({ history }) => (
@@ -7,7 +8,7 @@ export const WorkHistoryItem = ({ history }) => (
     <span className="logo"><img src={history.logo} alt={history.name}/></span>
     <span className="name">{history.name}</span>
     <span className="position">{history.position}</span>
-    <span className="timespan">{history.start.toString()} &ndash; {history.end.toString()}</span>
+    <span className="timespan">{moment(history.start).format('MMM YYYY')} &ndash; {moment(history.end).format('MMM YYYY')}</span>
     <p className="description">{history.description}</p>
   </div>
 )
