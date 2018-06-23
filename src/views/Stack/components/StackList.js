@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StackItem from './StackItem'
+import './StackList.css'
 
 export const StackList = ({ name, items }) => (
-  <div>
+  <div className="StackList">
     <h2>{name}</h2>
-    {items.map(item => <StackItem key={item.name} {...item} />)}
+    <ul>
+      {items.map(item => <li key={item.name}><StackItem {...item} /></li>)}
+    </ul>
   </div>
 )
 

@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './StackItem.css'
 
 export const StackItem = ({ name, logo }) => (
-  <div>
-    <img src={logo} alt=""/>
-    <span>{name}</span>
+  <div className="StackItem">
+    <span className="logo"><img src={logo} alt={name}/></span>
+    <span className="name">{name}</span>
   </div>
 )
 

@@ -2,9 +2,13 @@
   background: #000;
 }
 
+.Home h1,
+.Home main {
+  text-align: center;
+}
+
 .Home main {
   padding: 16px;
-  text-align: center;
 }
 
 .Home .me {

@@ -2,6 +2,7 @@ import React from 'react'
 import Page from '../../components/Page/Page'
 import data from './data'
 import StackList from './components/StackList'
+import './Stack.css'
 
 export const Stack = () => (
   <Page className="Stack">
