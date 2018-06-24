@@ -127,7 +127,7 @@ export default [{
     logo: ciCdLogo
   }]
 }, {
-  name: 'Business items',
+  name: 'Business Tools',
   items: [{
     name: 'Slack',
     logo: slackLogo
