@@ -80,7 +80,7 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 196px;
+    left: 204px;
   }
 }
 
@@ -92,7 +92,7 @@
   }
 
   .Header .nav.primary {
-    left: calc((100% - 1440px) / 2 + 196px);
+    left: calc((100% - 1440px) / 2 + 204px);
   }
 
   .Header .nav.social {

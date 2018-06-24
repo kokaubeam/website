@@ -4,6 +4,8 @@
 
 .Stack main {
   margin: 0 16px 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .Stack aside {
@@ -68,5 +70,11 @@
 @media (min-width: 768px) {
   .Stack aside {
     display: block;
+  }
+
+  .Stack main {
+    margin: 0 16px 16px;
+    width: calc(100% - 288px);
+    box-sizing: border-box;
   }
 }
