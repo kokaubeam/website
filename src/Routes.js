@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router'
 
 import Home from './views/Home'
 import WorkHistory from './views/WorkHistory'
-import Stack from './views/Stack'
+import Stack from './components/Stack'
 import NotFound from './views/NotFound'
 
 export const Routes = () => (

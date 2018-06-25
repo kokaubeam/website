@@ -1,8 +1,4 @@
-.StackList {
-  margin-bottom: 32px;
-}
-
-.StackList ul {
+.StackToolGroup ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

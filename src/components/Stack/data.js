@@ -30,109 +30,130 @@ import reduxLogo from './media/redux.svg'
 import htmlLogo from './media/html.svg'
 import restLogo from './media/rest.svg'
 
-export default [{
-  name: 'Toolkit',
-  items: [{
+export default {
+  tools: [{
     name: 'Sketch',
-    logo: sketchLogo
+    logo: sketchLogo,
+    tags: ['Toolkit']
   }, {
     name: 'HTML',
-    logo: htmlLogo
+    logo: htmlLogo,
+    tags: ['Toolkit']
   }, {
     name: 'CSS',
-    logo: cssLogo
+    logo: cssLogo,
+    tags: ['Toolkit']
   }, {
     name: 'JavaScript',
-    logo: jsLogo
+    logo: jsLogo,
+    tags: ['Toolkit']
   }, {
     name: 'React',
-    logo: reactLogo
+    logo: reactLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Redux',
-    logo: reduxLogo
+    logo: reduxLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Redux Saga',
-    logo: reduxSagaLogo
+    logo: reduxSagaLogo,
+    tags: ['Toolkit']
   }, {
     name: 'GraphQL',
-    logo: graphqlLogo
+    logo: graphqlLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Representational State Transfer',
-    logo: restLogo
+    logo: restLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Node',
-    logo: nodeLogo
+    logo: nodeLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Swift',
-    logo: swiftLogo
+    logo: swiftLogo,
+    tags: ['Toolkit']
   }, {
     name: 'C#',
-    logo: cSharpLogo
+    logo: cSharpLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Xcode',
-    logo: xcodeLogo
+    logo: xcodeLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Unreal',
-    logo: unrealLogo
+    logo: unrealLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Visual Studio Code',
-    logo: visualStudioCodeLogo
+    logo: visualStudioCodeLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Visual Studio',
-    logo: visualStudioLogo
+    logo: visualStudioLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Maya',
-    logo: mayaLogo
+    logo: mayaLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Test Driven Development',
-    logo: tddLogo
-  }]
-}, {
-  name: 'Data',
-  items: [{
+    logo: tddLogo,
+    tags: ['Toolkit']
+  }, {
     name: 'Cassandra',
-    logo: cassandraLogo
+    logo: cassandraLogo,
+    tags: ['Data']
   }, {
     name: 'Kafka',
-    logo: kafkaLogo
+    logo: kafkaLogo,
+    tags: ['Data']
   }, {
     name: 'MySQL',
-    logo: mysqlLogo
+    logo: mysqlLogo,
+    tags: ['Data']
   }, {
     name: 'Postgres',
-    logo: postgresLogo
+    logo: postgresLogo,
+    tags: ['Data']
   }, {
     name: 'RabbitMQ',
-    logo: rabbitmqLogo
-  }]
-}, {
-  name: 'Infrastructure',
-  items: [{
+    logo: rabbitmqLogo,
+    tags: ['Data']
+  }, {
     name: 'Git',
-    logo: gitLogo
+    logo: gitLogo,
+    tags: ['Infrastructure']
   }, {
     name: 'Github',
-    logo: githubLogo
+    logo: githubLogo,
+    tags: ['Infrastructure']
   }, {
     name: 'Docker',
-    logo: dockerLogo
+    logo: dockerLogo,
+    tags: ['Infrastructure']
   }, {
     name: 'AWS',
-    logo: awsLogo
+    logo: awsLogo,
+    tags: ['Infrastructure']
   }, {
     name: 'Digital Ocean',
-    logo: digitaloceanLogo
+    logo: digitaloceanLogo,
+    tags: ['Infrastructure']
   }, {
     name: 'Continuous Integration / Continuous Deployment',
-    logo: ciCdLogo
-  }]
-}, {
-  name: 'Business Tools',
-  items: [{
+    logo: ciCdLogo,
+    tags: ['Infrastructure']
+  }, {
     name: 'Slack',
-    logo: slackLogo
+    logo: slackLogo,
+    tags: ['Toolkit']
   }, {
     name: 'Trello',
-    logo: trelloLogo
+    logo: trelloLogo,
+    tags: ['Business Tools']
   }]
-}]
+}

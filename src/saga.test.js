@@ -1,6 +1,7 @@
 import { all } from 'redux-saga/effects'
 import { saga as analyticsSaga } from './components/Analytics'
 import { saga as headerSaga } from './components/Header'
+import { saga as stackSaga } from './components/Stack'
 
 import rootSaga from './saga'
 
@@ -14,7 +15,8 @@ describe('Root saga', () => {
   it('should start all the sagas', () => {
     expect(generator.next().value).toEqual(all([
       analyticsSaga(),
-      headerSaga()
+      headerSaga(),
+      stackSaga()
     ]))
   })
 

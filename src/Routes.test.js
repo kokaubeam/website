@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 
 import Home from './views/Home'
 import WorkHistory from './views/WorkHistory'
-import Stack from './views/Stack'
+import Stack from './components/Stack'
 import NotFound from './views/NotFound'
 
 import Routes from './Routes'

@@ -1,46 +1,46 @@
-.StackItem {
+.StackTool {
   margin: 8px;
   width: 32px;
   text-align: center;
 }
 
-.StackItem .logo {
+.StackTool .logo {
   display: flex;
   align-items: center;
   height: 32px;
   width: 32px;
 }
 
-.StackItem .logo img {
+.StackTool .logo img {
   display: block;
   margin: auto;
   max-width: 32px;
   max-height: 32px;
 }
 
-.StackItem .name {
+.StackTool .name {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .StackItem {
+  .StackTool {
     position: relative;
     margin: 16px;
     padding-bottom: 26px;
     width: 64px;
   }
 
-  .StackItem .logo {
+  .StackTool .logo {
     height: 64px;
     width: 64px;
   }
 
-  .StackItem .logo img {
+  .StackTool .logo img {
     max-width: 64px;
     max-height: 64px;
   }
 
-  .StackItem .name {
+  .StackTool .name {
     position: absolute;
     bottom: 0;
     left: 0;
