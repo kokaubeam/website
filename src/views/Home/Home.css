@@ -37,6 +37,12 @@
   font-size: 14px;
 }
 
+@media (min-width: 224px) {
+  .Home .me {
+    height: 192px;
+  }
+}
+
 @media (min-width: 768px) {
   .Home .greeting {
     font-size: 20px;
@@ -47,5 +53,6 @@
   .Home .laptop {
     margin-bottom: -128px;
     width: 922px;
+    height: 414px;
   }
 }
