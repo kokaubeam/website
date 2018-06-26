@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import { reducer as headerReducer } from './components/Header'
 import { reducer as stackReducer } from './components/Stack'
+import { reducer as workHistoryReducer } from './components/WorkHistory'
 
 jest.mock('redux')
 jest.mock('react-router-redux')
@@ -21,7 +22,8 @@ describe('Root reducer', () => {
     expect(combineReducers).toHaveBeenCalledWith({
       header: headerReducer,
       router: routerReducer,
-      stack: stackReducer
+      stack: stackReducer,
+      workHistory: workHistoryReducer
     })
   })
 
