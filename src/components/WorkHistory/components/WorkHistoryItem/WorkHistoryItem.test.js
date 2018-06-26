@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import ReactMarkdown from 'react-markdown'
 
 import { WorkHistoryItem } from './WorkHistoryItem'
 
@@ -34,7 +35,9 @@ describe('WorkHistoryItem component', () => {
   })
 
   it('should render the description', () => {
-    expect(component.text()).toContain(props.history.description)
+    const description = component.find(ReactMarkdown)
+    expect(description).toExist()
+    expect(description.prop('source')).toBe(props.history.description)
   })
 
   it('should render the logo', () => {

@@ -19,7 +19,7 @@ export default [{
 }, {
   name: 'FamilyLink.com',
   position: 'Senior Software Engineer',
-  description: 'Connected families through social media integration and full-stack development of web apps supporting over 56 million registered users. Assisted in the acquisition of wererelated.com by ancestry.com.',
+  description: 'Connected families through social media integration and full-stack development of web apps supporting over 56 million registered users. Assisted in the acquisition of the We\'re Related app by [ancestry.com](https://ancestry.com).',
   logo: familyLinkLogo,
   start: new Date('Nov 1, 2011'),
   end: new Date('Mar 1, 2012')
@@ -40,7 +40,7 @@ export default [{
 }, {
   name: 'Berkadia',
   position: 'Team Lead, Senior Software Engineer',
-  description: 'Developing the rediq.io experience to provide valuations and comparisons of multi-family property investments.',
+  description: 'Developing the [rediq.io](https://rediq.io) experience to provide valuations and comparisons of multi-family property investments.',
   logo: berkadiaLogo,
   start: new Date('Oct 1, 2017'),
   end: new Date()
@@ -54,7 +54,7 @@ export default [{
 }, {
   name: 'Pluralsight',
   position: 'Senior Software Engineer',
-  description: 'Developed the community and learning-path experiences for pluralsight.com using principles of test-driven development, pair-programming, and domain-driven design.',
+  description: 'Developed the community and learning-path experiences using principles of test-driven development, pair-programming, and domain-driven design.',
   logo: pluralsightLogo,
   start: new Date('May 1, 2015'),
   end: new Date('Sep 1, 2017')
@@ -68,7 +68,7 @@ export default [{
 }, {
   name: 'Objective Play',
   position: 'Founder',
-  description: 'Persuing a personal passion to create interactive digital media, such as games and virtual reality experiences. Learn more at objplay.com.',
+  description: 'Pursuing a personal passion to create interactive digital media, such as games and virtual reality experiences. Learn more at [objplay.com](https://objplay.com).',
   logo: objectivePlayLogo,
   start: new Date('Mar 1, 2017'),
   end: new Date()
