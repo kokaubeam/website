@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router'
 
 import Home from './views/Home'
-import WorkHistory from './views/WorkHistory'
+import WorkHistory from './components/WorkHistory'
 import Stack from './components/Stack'
 import NotFound from './views/NotFound'
 
