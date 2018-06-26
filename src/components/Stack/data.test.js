@@ -16,6 +16,7 @@ describe('Stack data', () => {
       expect(tool).toMatchObject({
         name: expect.any(String),
         logo: expect.any(String),
+        url: expect.any(String),
         tags: expect.any(Array)
       })
     })

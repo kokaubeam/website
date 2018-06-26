@@ -6,3 +6,21 @@
   margin: 0;
   padding: 0;
 }
+
+.StackToolGroup ul {
+  margin-right: -16px;
+}
+
+.StackToolGroup ul li {
+  margin: 0 16px 16px 0
+}
+
+@media (min-width: 768px) {
+  .StackToolGroup ul {
+    margin-right: -32px;
+  }
+
+  .StackToolGroup ul li {
+    margin: 0 32px 32px 0
+  }
+}

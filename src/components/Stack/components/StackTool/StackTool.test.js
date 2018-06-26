@@ -9,6 +9,7 @@ describe('StackTool component', () => {
   const props = {
     tool: {
       name: 'Tool 1',
+      url: 'https://tool-1.puppies',
       logo: './media/tool-1.svg'
     }
   }
@@ -19,6 +20,11 @@ describe('StackTool component', () => {
 
   it('should render', () => {
     expect(component).toExist()
+  })
+
+  it('should link to the tool\'s website', () => {
+    expect(component.prop('href')).toBe(props.tool.url)
+    expect(component.prop('target')).toBe('_blank')
   })
 
   it('should render the name', () => {
