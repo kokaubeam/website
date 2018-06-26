@@ -1,12 +1,12 @@
-.WorkHistory {
+.WorkHistoryPage {
   display: flex;
 }
 
-.WorkHistory main {
+.WorkHistoryPage main {
   margin: 0 16px 16px;
 }
 
-.WorkHistory aside {
+.WorkHistoryPage aside {
   display: none;
   flex-shrink: 0;
   flex-grow: 0;
@@ -14,52 +14,52 @@
   width: 288px;
 }
 
-.WorkHistory ul.WorkHistoryList {
+.WorkHistoryPage ul.WorkHistoryList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.WorkHistory ul.WorkHistoryList ul li {
+.WorkHistoryPage ul.WorkHistoryList ul li {
   margin-bottom: 16px;
 }
 
-.WorkHistory ul.WorkHistoryList li {
+.WorkHistoryPage ul.WorkHistoryList li {
   animation: 200ms ease-out 100ms backwards WorkHistory-item-appear;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(2) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(2) {
   animation-delay: 200ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(3) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(3) {
   animation-delay: 300ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(4) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(4) {
   animation-delay: 400ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(5) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(5) {
   animation-delay: 500ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(6) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(6) {
   animation-delay: 600ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(7) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(7) {
   animation-delay: 700ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(8) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(8) {
   animation-delay: 800ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(9) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(9) {
   animation-delay: 900ms;
 }
 
-.WorkHistory ul.WorkHistoryList li:nth-child(10) {
+.WorkHistoryPage ul.WorkHistoryList li:nth-child(10) {
   animation-delay: 1s;
 }
 
@@ -75,7 +75,7 @@
 }
 
 @media (min-width: 768px) {
-  .WorkHistory aside {
+  .WorkHistoryPage aside {
     display: block;
   }
 }

@@ -1,17 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import data from './data'
-import WorkHistoryItem from './components/WorkHistoryItem'
-import Bio from '../../components/Bio'
+import data from '../../data'
+import WorkHistoryItem from '../WorkHistoryItem'
+import Bio from '../../../Bio'
 
-import { WorkHistory } from './WorkHistory'
+import { WorkHistoryPage } from './WorkHistoryPage'
 
-describe('WorkHistory component', () => {
+describe('WorkHistoryPage component', () => {
   let component
 
   beforeAll(() => {
     jest.spyOn(data, 'sort')
-    component = shallow(<WorkHistory />)
+    component = shallow(<WorkHistoryPage />)
   })
 
   afterAll(() => {

@@ -1,3 +1,3 @@
-import WorkHistory from './WorkHistory'
+import WorkHistoryPage from './components/WorkHistoryPage'
 
-export default WorkHistory
+export default WorkHistoryPage
