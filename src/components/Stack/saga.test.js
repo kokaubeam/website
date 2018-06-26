@@ -9,7 +9,7 @@ import {
 
 import saga, { handleStackRequest } from './saga'
 
-describe('Support saga', () => {
+describe('Stack saga', () => {
   describe('#saga', () => {
     let generator
 
