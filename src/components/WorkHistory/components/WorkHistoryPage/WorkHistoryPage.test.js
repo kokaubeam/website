@@ -1,21 +1,42 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import data from '../../data'
 import WorkHistoryItem from '../WorkHistoryItem'
 import Bio from '../../../Bio'
+import { workHistoryOrderByStartSelector } from '../../selectors'
+import { requestWorkHistory } from '../../actions'
 
-import { WorkHistoryPage } from './WorkHistoryPage'
+jest.mock('../../selectors')
+
+import {
+  WorkHistoryPage,
+  mapStateToProps,
+  mapDispatchToProps
+} from './WorkHistoryPage'
 
 describe('WorkHistoryPage component', () => {
   let component
 
-  beforeAll(() => {
-    jest.spyOn(data, 'sort')
-    component = shallow(<WorkHistoryPage />)
-  })
+  const props = {
+    workHistory: [{
+      name: 'Aperture Science',
+      position: 'Test Subject',
+      description: 'Ate cake and tested Aperature Science products.',
+      logo: './media/aperture-science.svg',
+      start: new Date('Jun 1, 1940'),
+      end: new Date('Aug 1, 1998')
+    }, {
+      name: 'Black Mesa',
+      position: 'Level 3 Research Associate Scientist',
+      description: 'Defended the human race against hostile aliens. Lead an uprising against alien invaders.',
+      logo: './media/black-mesa.svg',
+      start: new Date('May 1, 2000'),
+      end: new Date('May 16, 2005')
+    }],
+    getWorkHistory: jest.fn()
+  }
 
-  afterAll(() => {
-    data.sort.mockRestore()
+  beforeAll(() => {
+    component = shallow(<WorkHistoryPage {...props} />)
   })
 
   it('should render', () => {
@@ -29,35 +50,79 @@ describe('WorkHistoryPage component', () => {
 
   it('should render a WorkHistoryItem for each item in the work history', () => {
     const histories = component.find(WorkHistoryItem)
-    expect(histories.length).toBe(data.length)
+    expect(histories.length).toBe(props.workHistory.length)
   })
 
   it('should set the properties on each WorkHistoryItem', () => {
     const histories = component.find(WorkHistoryItem)
     histories.forEach((history, index) => {
-      expect(history.prop('history')).toBe(data[index])
+      expect(history.prop('history')).toBe(props.workHistory[index])
     })
-  })
-
-  it('should have sorted the work history to show the most recent history first', () => {
-    expect(data.sort).toHaveBeenCalled()
-
-    const sortFunction = data.sort.mock.calls[0][0]
-    const toSort = [{
-      start: new Date('2010')
-    }, {
-      start: new Date('2020')
-    }, {
-      start: new Date('2015')
-    }]
-
-    toSort.sort(sortFunction)
-
-    expect(toSort[0].start).toEqual(new Date('2020'))
   })
 
   it('should render the bio', () => {
     const bio = component.find(Bio)
     expect(bio).toExist()
+  })
+
+  describe('#mapStateToProps', () => {
+    let map
+
+    const mockState = {
+      mock: 'mockState'
+    }
+    const mockWorkHistory = [{
+      name: 'Aperture Science',
+      position: 'Test Subject',
+      description: 'Ate cake and tested Aperature Science products.',
+      logo: './media/aperture-science.svg',
+      start: new Date('Jun 1, 1940'),
+      end: new Date('Aug 1, 1998')
+    }]
+
+    beforeAll(() => {
+      workHistoryOrderByStartSelector.mockReturnValue(mockWorkHistory)
+      map = mapStateToProps(mockState)
+    })
+
+    afterAll(() => {
+      workHistoryOrderByStartSelector.mockReset()
+    })
+
+    it('should select the work history', () => {
+      expect(workHistoryOrderByStartSelector).toHaveBeenCalledWith(mockState)
+    })
+
+    it('should map the state to the props', () => {
+      expect(map).toEqual({
+        workHistory: mockWorkHistory
+      })
+    })
+  })
+
+  describe('#mapDispatchToProps', () => {
+    let map
+
+    const mockDispatch = jest.fn()
+
+    beforeAll(() => {
+      map = mapDispatchToProps(mockDispatch)
+    })
+
+    it('should map the state to the props', () => {
+      expect(map).toEqual({
+        getWorkHistory: expect.any(Function)
+      })
+    })
+
+    describe('#getWorkHistory', () => {
+      beforeAll(() => {
+        map.getWorkHistory()
+      })
+
+      it('should request the stack', () => {
+        expect(mockDispatch).toHaveBeenCalledWith(requestWorkHistory())
+      })
+    })
   })
 })
