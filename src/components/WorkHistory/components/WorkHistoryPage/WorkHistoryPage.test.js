@@ -2,7 +2,10 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import WorkHistoryItem from '../WorkHistoryItem'
 import Bio from '../../../Bio'
-import { workHistoryOrderByStartSelector } from '../../selectors'
+import {
+  workHistoryOrderByStartSelector,
+  workHistoryYearsOfExperienceSelector
+} from '../../selectors'
 import { requestWorkHistory } from '../../actions'
 
 jest.mock('../../selectors')
@@ -32,7 +35,8 @@ describe('WorkHistoryPage component', () => {
       start: new Date('May 1, 2000'),
       end: new Date('May 16, 2005')
     }],
-    getWorkHistory: jest.fn()
+    getWorkHistory: jest.fn(),
+    yearsOfExperience: 15
   }
 
   beforeAll(() => {
@@ -46,6 +50,11 @@ describe('WorkHistoryPage component', () => {
   it('should render the title', () => {
     const title = component.find('h1')
     expect(title.text()).toContain('Work History')
+  })
+
+  it('should render the title', () => {
+    const yearsOfExperience = component.find('p').filterWhere(n => n.text() === `${props.yearsOfExperience} Years of Professional Experience`)
+    expect(yearsOfExperience).toExist()
   })
 
   it('should render a WorkHistoryItem for each item in the work history', () => {
@@ -79,23 +88,31 @@ describe('WorkHistoryPage component', () => {
       start: new Date('Jun 1, 1940'),
       end: new Date('Aug 1, 1998')
     }]
+    const mockYearsOfExperience = 15
 
     beforeAll(() => {
       workHistoryOrderByStartSelector.mockReturnValue(mockWorkHistory)
+      workHistoryYearsOfExperienceSelector.mockReturnValue(mockYearsOfExperience)
       map = mapStateToProps(mockState)
     })
 
     afterAll(() => {
       workHistoryOrderByStartSelector.mockReset()
+      workHistoryYearsOfExperienceSelector.mockReset()
     })
 
     it('should select the work history', () => {
       expect(workHistoryOrderByStartSelector).toHaveBeenCalledWith(mockState)
     })
 
+    it('should select the years of experience', () => {
+      expect(workHistoryYearsOfExperienceSelector).toHaveBeenCalledWith(mockState)
+    })
+
     it('should map the state to the props', () => {
       expect(map).toEqual({
-        workHistory: mockWorkHistory
+        workHistory: mockWorkHistory,
+        yearsOfExperience: mockYearsOfExperience
       })
     })
   })

@@ -1,6 +1,9 @@
+import MockDate from 'mockdate'
+
 import {
   workHistorySelector,
-  workHistoryOrderByStartSelector
+  workHistoryOrderByStartSelector,
+  workHistoryYearsOfExperienceSelector
 } from './selectors'
 
 describe('WorkHistory selectors', () => {
@@ -57,6 +60,44 @@ describe('WorkHistory selectors', () => {
         start: new Date('Jun 1, 1940'),
         end: new Date('Aug 1, 1998')
       }])
+    })
+  })
+
+  describe('#workHistoryYearsOfExperienceSelector', () => {
+    describe('when there is work history', () => {
+      let result
+
+      beforeAll(() => {
+        MockDate.set(new Date('Dec 15, 2010'))
+        result = workHistoryYearsOfExperienceSelector(mockState)
+      })
+
+      afterAll(() => {
+        MockDate.reset()
+      })
+
+      it('should return the years since the earliest start date', () => {
+        expect(result).toEqual(70)
+      })
+    })
+
+    describe('when work history is empty', () => {
+      let result
+
+      beforeAll(() => {
+        MockDate.set(new Date('Dec 15, 2010'))
+        result = workHistoryYearsOfExperienceSelector({
+          workHistory: []
+        })
+      })
+
+      afterAll(() => {
+        MockDate.reset()
+      })
+
+      it('should return 0', () => {
+        expect(result).toEqual(0)
+      })
     })
   })
 })

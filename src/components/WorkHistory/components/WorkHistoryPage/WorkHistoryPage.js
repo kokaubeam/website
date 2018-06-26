@@ -4,14 +4,18 @@ import { connect } from 'react-redux'
 import Page from '../../../Page'
 import WorkHistoryItem from '../WorkHistoryItem'
 import Bio from '../../../Bio'
-import { workHistoryOrderByStartSelector } from '../../selectors'
+import {
+  workHistoryOrderByStartSelector,
+  workHistoryYearsOfExperienceSelector
+} from '../../selectors'
 import { requestWorkHistory } from '../../actions'
 import './WorkHistoryPage.css'
 
 export class WorkHistoryPage extends Component {
   static propTypes = {
     workHistory: PropTypes.array.isRequired,
-    getWorkHistory: PropTypes.func.isRequired
+    getWorkHistory: PropTypes.func.isRequired,
+    yearsOfExperience: PropTypes.number.isRequired
   }
 
   componentDidMount() {
@@ -20,7 +24,7 @@ export class WorkHistoryPage extends Component {
   }
 
   render() {
-    const { workHistory } = this.props
+    const { workHistory, yearsOfExperience } = this.props
 
     return (
       <Page className="WorkHistoryPage">
@@ -29,6 +33,9 @@ export class WorkHistoryPage extends Component {
         </aside>
         <main>
           <h1>Work History</h1>
+
+          <p className="YearsOfExperience">{yearsOfExperience} Years of Professional Experience</p>
+
           <ul className="WorkHistoryList">
             {workHistory.map(history => (
             <li key={history.name}>
@@ -43,7 +50,8 @@ export class WorkHistoryPage extends Component {
 }
 
 export const mapStateToProps = state => ({
-  workHistory: workHistoryOrderByStartSelector(state)
+  workHistory: workHistoryOrderByStartSelector(state),
+  yearsOfExperience: workHistoryYearsOfExperienceSelector(state)
 })
 
 export const mapDispatchToProps = dispatch => ({
