@@ -4,7 +4,7 @@ import {
   WORK_HISTORY_REQUEST_FAILURE
 } from './constants'
 
-describe('Stack constants', () => {
+describe('WorkHistory constants', () => {
   it('should export WORK_HISTORY_REQUEST', () => {
     expect(WORK_HISTORY_REQUEST).toBeDefined()
   })
