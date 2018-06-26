@@ -46,7 +46,7 @@
 .Header .brand.compact {
   position: absolute;
   top: 0;
-  left: calc(50% - 21px)
+  left: calc(50% - 30px)
 }
 
 .Header .nav.primary {
