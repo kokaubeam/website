@@ -33,7 +33,7 @@
 }
 
 .HomePage .greeting {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 

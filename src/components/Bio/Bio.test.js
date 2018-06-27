@@ -21,7 +21,8 @@ describe('Bio component', () => {
   })
 
   it('should render the title', () => {
-    expect(component.text()).toContain('Husband, Father, Technology Innovator')
+    const title = component.find('h1')
+    expect(title.text()).toContain('Husband, Father, Technology Innovator')
   })
 
   it('should render the content', () => {
