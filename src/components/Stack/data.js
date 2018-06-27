@@ -180,7 +180,7 @@ export default {
     name: 'Slack',
     logo: slackLogo,
     url: 'https://slack.com/',
-    tags: ['Toolkit']
+    tags: ['Business Tools']
   }, {
     name: 'Trello',
     logo: trelloLogo,
