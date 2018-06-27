@@ -2,13 +2,13 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { Link } from 'react-router-dom'
 
-import { NotFound } from './NotFound'
+import { NotFoundPage } from './NotFoundPage'
 
-describe('NotFound component', () => {
+describe('NotFoundPage component', () => {
   let component
 
   beforeAll(() => {
-    component = shallow(<NotFound />)
+    component = shallow(<NotFoundPage />)
   })
 
   it('should render', () => {

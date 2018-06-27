@@ -1,11 +1,11 @@
 import React from 'react'
-import Page from '../../components/Page/Page'
-import meImage from './media/me.jpg'
-import laptopImage from './media/laptop.jpg'
-import './Home.css'
+import Page from '../../../Page/Page'
+import meImage from '../../media/me.jpg'
+import laptopImage from '../../media/laptop.jpg'
+import './HomePage.css'
 
-export const Home = () => (
-  <Page className="Home">
+export const HomePage = () => (
+  <Page className="HomePage">
     <main>
       <img className="me" src={meImage} alt="Jonathan Davis"/>
 
@@ -24,4 +24,4 @@ export const Home = () => (
   </Page>
 )
 
-export default Home
+export default HomePage

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
 
-import Home from './views/Home'
+import Home from './components/Home'
 import WorkHistory from './components/WorkHistory'
 import Stack from './components/Stack'
-import NotFound from './views/NotFound'
+import NotFound from './components/NotFound'
 
 export const Routes = () => (
   <Switch>

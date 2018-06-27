@@ -2,10 +2,10 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { shallow } from 'enzyme'
 
-import Home from './views/Home'
+import Home from './components/Home'
 import WorkHistory from './components/WorkHistory'
 import Stack from './components/Stack'
-import NotFound from './views/NotFound'
+import NotFound from './components/NotFound'
 
 import Routes from './Routes'
 

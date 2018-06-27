@@ -1,13 +1,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Home } from './Home'
+import { HomePage } from './HomePage'
 
-describe('Home component', () => {
+describe('HomePage component', () => {
   let component
 
   beforeAll(() => {
-    component = shallow(<Home />)
+    component = shallow(<HomePage />)
   })
 
   it('should render', () => {

@@ -1,0 +1,7 @@
+.NotFoundPage main {
+  padding: 16px;
+}
+
+.NotFoundPage p {
+  color: rgba(255, 255, 255, 0.7);
+}
