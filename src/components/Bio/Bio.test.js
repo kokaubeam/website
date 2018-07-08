@@ -26,7 +26,7 @@ describe('Bio component', () => {
   })
 
   it('should render the content', () => {
-    expect(component.text()).toContain('I love thoughts and ideas. I enjoy conversation and people. I’m drivin by learning and creativity.')
-    expect(component.text()).toContain('Professionally, I thrive in technology and exploring it’s ever evolving potential to transform the way we live and connect.')
+    expect(component.text()).toContain('I love thoughts and ideas, enjoy conversation and people, and am drivin by learning and creativity.')
+    expect(component.text()).toContain('Professionally, I thrive in technology and exploring its ever evolving potential to transform the way we live and connect.')
   })
 })

@@ -34,7 +34,7 @@ describe('HomePage component', () => {
   it('should render the content', () => {
     const content = component.find('main').text()
     expect(content).toContain('Hi, I’m Jonathan.')
-    expect(content).toContain('I love thoughts and ideas. I enjoy conversation and people. I’m drivin by learning and creativity.')
-    expect(content).toContain('Professionally, I thrive in technology and exploring it’s ever evolving potential to transform the way we live and connect.')
+    expect(content).toContain('I love thoughts and ideas, enjoy conversation and people, and am drivin by learning and creativity.')
+    expect(content).toContain('Professionally, I thrive in technology and exploring its ever evolving potential to transform the way we live and connect.')
   })
 })

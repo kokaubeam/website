@@ -16,9 +16,9 @@ export const HomePage = () => (
       <div className="introduction">
         <p className="greeting">Hi, I’m Jonathan.</p>
 
-        <p>I love thoughts and ideas. I enjoy conversation and people. I’m drivin by learning and creativity.</p>
+        <p>I love thoughts and ideas, enjoy conversation and people, and am drivin by learning and creativity.</p>
 
-        <p>Professionally, I thrive in technology and exploring it’s ever evolving potential to transform the way we live and connect.</p>
+        <p>Professionally, I thrive in technology and exploring its ever evolving potential to transform the way we live and connect.</p>
       </div>
     </main>
   </Page>
