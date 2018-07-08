@@ -1,14 +1,14 @@
 import MockDate from 'mockdate'
 
 import {
-  workHistorySelector,
-  workHistoryOrderByStartSelector,
-  workHistoryYearsOfExperienceSelector
+  experienceSelector,
+  experienceOrderByStartSelector,
+  experienceYearsOfExperienceSelector
 } from './selectors'
 
-describe('WorkHistory selectors', () => {
+describe('Experience selectors', () => {
   const mockState = {
-    workHistory: [{
+    experience: [{
       name: 'Aperture Science',
       position: 'Test Subject',
       description: 'Ate cake and tested Aperature Science products.',
@@ -25,23 +25,23 @@ describe('WorkHistory selectors', () => {
     }]
   }
 
-  describe('#workHistorySelector', () => {
+  describe('#experienceSelector', () => {
     let result
 
     beforeAll(() => {
-      result = workHistorySelector(mockState)
+      result = experienceSelector(mockState)
     })
 
     it('should return the stack', () => {
-      expect(result).toBe(mockState.workHistory)
+      expect(result).toBe(mockState.experience)
     })
   })
 
-  describe('#workHistoryOrderByStartSelector', () => {
+  describe('#experienceOrderByStartSelector', () => {
     let result
 
     beforeAll(() => {
-      result = workHistoryOrderByStartSelector(mockState)
+      result = experienceOrderByStartSelector(mockState)
     })
 
     it('should return the stack sorted by start date', () => {
@@ -63,13 +63,13 @@ describe('WorkHistory selectors', () => {
     })
   })
 
-  describe('#workHistoryYearsOfExperienceSelector', () => {
+  describe('#experienceYearsOfExperienceSelector', () => {
     describe('when there is work history', () => {
       let result
 
       beforeAll(() => {
         MockDate.set(new Date('Dec 15, 2010'))
-        result = workHistoryYearsOfExperienceSelector(mockState)
+        result = experienceYearsOfExperienceSelector(mockState)
       })
 
       afterAll(() => {
@@ -86,8 +86,8 @@ describe('WorkHistory selectors', () => {
 
       beforeAll(() => {
         MockDate.set(new Date('Dec 15, 2010'))
-        result = workHistoryYearsOfExperienceSelector({
-          workHistory: []
+        result = experienceYearsOfExperienceSelector({
+          experience: []
         })
       })
 

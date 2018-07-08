@@ -2,9 +2,9 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import ReactMarkdown from 'react-markdown'
 
-import { WorkHistoryItem } from './WorkHistoryItem'
+import { ExperienceItem } from './ExperienceItem'
 
-describe('WorkHistoryItem component', () => {
+describe('ExperienceItem component', () => {
   let component
 
   const props = {
@@ -19,7 +19,7 @@ describe('WorkHistoryItem component', () => {
   }
 
   beforeAll(() => {
-    component = shallow(<WorkHistoryItem {...props} />)
+    component = shallow(<ExperienceItem {...props} />)
   })
 
   it('should render', () => {

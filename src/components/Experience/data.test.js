@@ -1,6 +1,6 @@
 import data from './data'
 
-describe('WorkHistory data', () => {
+describe('Experience data', () => {
   it('should export an array', () => {
     expect(data).toBeInstanceOf(Array)
   })

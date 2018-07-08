@@ -2,12 +2,12 @@ import data from './data'
 
 import * as service from './service'
 
-describe('WorkHistory service', () => {
-  describe('#getWorkHistory', () => {
+describe('Experience service', () => {
+  describe('#getExperience', () => {
     let stacks
 
     beforeAll(async () => {
-      stacks = await service.getWorkHistory()
+      stacks = await service.getExperience()
     })
 
     it('should return the work history data', () => {

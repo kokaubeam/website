@@ -1,26 +1,26 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import WorkHistoryItem from '../WorkHistoryItem'
+import ExperienceItem from '../ExperienceItem'
 import Bio from '../../../Bio'
 import {
-  workHistoryOrderByStartSelector,
-  workHistoryYearsOfExperienceSelector
+  experienceOrderByStartSelector,
+  experienceYearsOfExperienceSelector
 } from '../../selectors'
-import { requestWorkHistory } from '../../actions'
+import { requestExperience } from '../../actions'
 
 jest.mock('../../selectors')
 
 import {
-  WorkHistoryPage,
+  ExperiencePage,
   mapStateToProps,
   mapDispatchToProps
-} from './WorkHistoryPage'
+} from './ExperiencePage'
 
-describe('WorkHistoryPage component', () => {
+describe('ExperiencePage component', () => {
   let component
 
   const props = {
-    workHistory: [{
+    experience: [{
       name: 'Aperture Science',
       position: 'Test Subject',
       description: 'Ate cake and tested Aperature Science products.',
@@ -35,12 +35,12 @@ describe('WorkHistoryPage component', () => {
       start: new Date('May 1, 2000'),
       end: new Date('May 16, 2005')
     }],
-    getWorkHistory: jest.fn(),
+    getExperience: jest.fn(),
     yearsOfExperience: 15
   }
 
   beforeAll(() => {
-    component = shallow(<WorkHistoryPage {...props} />)
+    component = shallow(<ExperiencePage {...props} />)
   })
 
   it('should render', () => {
@@ -49,23 +49,18 @@ describe('WorkHistoryPage component', () => {
 
   it('should render the title', () => {
     const title = component.find('h1')
-    expect(title.text()).toContain('Work History')
+    expect(title.text()).toContain(`${props.yearsOfExperience} Years of Professional Experience`)
   })
 
-  it('should render the title', () => {
-    const yearsOfExperience = component.find('p').filterWhere(n => n.text() === `${props.yearsOfExperience} Years of Professional Experience`)
-    expect(yearsOfExperience).toExist()
+  it('should render a ExperienceItem for each item in the work history', () => {
+    const histories = component.find(ExperienceItem)
+    expect(histories.length).toBe(props.experience.length)
   })
 
-  it('should render a WorkHistoryItem for each item in the work history', () => {
-    const histories = component.find(WorkHistoryItem)
-    expect(histories.length).toBe(props.workHistory.length)
-  })
-
-  it('should set the properties on each WorkHistoryItem', () => {
-    const histories = component.find(WorkHistoryItem)
+  it('should set the properties on each ExperienceItem', () => {
+    const histories = component.find(ExperienceItem)
     histories.forEach((history, index) => {
-      expect(history.prop('history')).toBe(props.workHistory[index])
+      expect(history.prop('history')).toBe(props.experience[index])
     })
   })
 
@@ -80,7 +75,7 @@ describe('WorkHistoryPage component', () => {
     const mockState = {
       mock: 'mockState'
     }
-    const mockWorkHistory = [{
+    const mockExperience = [{
       name: 'Aperture Science',
       position: 'Test Subject',
       description: 'Ate cake and tested Aperature Science products.',
@@ -91,27 +86,27 @@ describe('WorkHistoryPage component', () => {
     const mockYearsOfExperience = 15
 
     beforeAll(() => {
-      workHistoryOrderByStartSelector.mockReturnValue(mockWorkHistory)
-      workHistoryYearsOfExperienceSelector.mockReturnValue(mockYearsOfExperience)
+      experienceOrderByStartSelector.mockReturnValue(mockExperience)
+      experienceYearsOfExperienceSelector.mockReturnValue(mockYearsOfExperience)
       map = mapStateToProps(mockState)
     })
 
     afterAll(() => {
-      workHistoryOrderByStartSelector.mockReset()
-      workHistoryYearsOfExperienceSelector.mockReset()
+      experienceOrderByStartSelector.mockReset()
+      experienceYearsOfExperienceSelector.mockReset()
     })
 
     it('should select the work history', () => {
-      expect(workHistoryOrderByStartSelector).toHaveBeenCalledWith(mockState)
+      expect(experienceOrderByStartSelector).toHaveBeenCalledWith(mockState)
     })
 
     it('should select the years of experience', () => {
-      expect(workHistoryYearsOfExperienceSelector).toHaveBeenCalledWith(mockState)
+      expect(experienceYearsOfExperienceSelector).toHaveBeenCalledWith(mockState)
     })
 
     it('should map the state to the props', () => {
       expect(map).toEqual({
-        workHistory: mockWorkHistory,
+        experience: mockExperience,
         yearsOfExperience: mockYearsOfExperience
       })
     })
@@ -128,17 +123,17 @@ describe('WorkHistoryPage component', () => {
 
     it('should map the state to the props', () => {
       expect(map).toEqual({
-        getWorkHistory: expect.any(Function)
+        getExperience: expect.any(Function)
       })
     })
 
-    describe('#getWorkHistory', () => {
+    describe('#getExperience', () => {
       beforeAll(() => {
-        map.getWorkHistory()
+        map.getExperience()
       })
 
       it('should request the stack', () => {
-        expect(mockDispatch).toHaveBeenCalledWith(requestWorkHistory())
+        expect(mockDispatch).toHaveBeenCalledWith(requestExperience())
       })
     })
   })

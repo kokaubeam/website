@@ -1,10 +1,10 @@
 import {
-  WORK_HISTORY_REQUEST_SUCCESS
+  EXPERIENCE_REQUEST_SUCCESS
 } from './constants'
 
 import reducer from './reducer'
 
-describe('WorkHistory reducer', () => {
+describe('Experience reducer', () => {
   describe('when the state is undefined', () => {
     let state
 
@@ -33,12 +33,12 @@ describe('WorkHistory reducer', () => {
     })
   })
 
-  describe('when reducing WORK_HISTORY_REQUEST_SUCCESS', () => {
+  describe('when reducing EXPERIENCE_REQUEST_SUCCESS', () => {
     let state
 
     const prevState = []
 
-    const mockWorkHistory = [{
+    const mockExperience = [{
       name: 'Aperture Science',
       position: 'Test Subject',
       description: 'Ate cake and tested Aperature Science products.',
@@ -48,8 +48,8 @@ describe('WorkHistory reducer', () => {
     }]
 
     const mockAction = {
-      type: WORK_HISTORY_REQUEST_SUCCESS,
-      workHistory: mockWorkHistory
+      type: EXPERIENCE_REQUEST_SUCCESS,
+      experience: mockExperience
     }
 
     beforeAll(() => {
@@ -57,7 +57,7 @@ describe('WorkHistory reducer', () => {
     })
 
     it('should update the tools', () => {
-      expect(state).toEqual(mockWorkHistory)
+      expect(state).toEqual(mockExperience)
     })
   })
 })

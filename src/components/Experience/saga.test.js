@@ -1,15 +1,15 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
-import { WORK_HISTORY_REQUEST } from './constants'
-import * as workHistoryService from './service'
+import { EXPERIENCE_REQUEST } from './constants'
+import * as experienceService from './service'
 import {
-  requestWorkHistory,
-  requestWorkHistorySuccess,
-  requestWorkHistoryFailure
+  requestExperience,
+  requestExperienceSuccess,
+  requestExperienceFailure
 } from './actions'
 
-import saga, { handleWorkHistoryRequest } from './saga'
+import saga, { handleExperienceRequest } from './saga'
 
-describe('WorkHistory saga', () => {
+describe('Experience saga', () => {
   describe('#saga', () => {
     let generator
 
@@ -17,8 +17,8 @@ describe('WorkHistory saga', () => {
       generator = saga()
     })
 
-    it('should forward the latest WORK_HISTORY_REQUEST to handleWorkHistoryRequest', () => {
-      expect(generator.next().value).toEqual(takeLatest(WORK_HISTORY_REQUEST, handleWorkHistoryRequest))
+    it('should forward the latest EXPERIENCE_REQUEST to handleExperienceRequest', () => {
+      expect(generator.next().value).toEqual(takeLatest(EXPERIENCE_REQUEST, handleExperienceRequest))
     })
 
     it('should be done', () => {
@@ -26,13 +26,13 @@ describe('WorkHistory saga', () => {
     })
   })
 
-  describe('#handleWorkHistoryRequest', () => {
-    const mockAction = requestWorkHistory()
+  describe('#handleExperienceRequest', () => {
+    const mockAction = requestExperience()
 
     describe('when successful', () => {
       let generator
 
-      const mockWorkHistory = [{
+      const mockExperience = [{
         name: 'Business Tools',
         tools: [{
           name: 'Slack',
@@ -41,16 +41,16 @@ describe('WorkHistory saga', () => {
       }]
 
       beforeAll(() => {
-        generator = handleWorkHistoryRequest(mockAction)
+        generator = handleExperienceRequest(mockAction)
       })
 
       it('should get the work history from the work history service', () => {
-        expect(generator.next().value).toEqual(call(workHistoryService.getWorkHistory))
+        expect(generator.next().value).toEqual(call(experienceService.getExperience))
       })
 
       it('should dispatch that the work history request was successful', () => {
-        expect(generator.next(mockWorkHistory).value).toEqual(put(
-          requestWorkHistorySuccess(mockWorkHistory)
+        expect(generator.next(mockExperience).value).toEqual(put(
+          requestExperienceSuccess(mockExperience)
         ))
       })
 
@@ -65,16 +65,16 @@ describe('WorkHistory saga', () => {
       const mockError = new Error('Everything is fine! Nothing is ruined!')
 
       beforeAll(() => {
-        generator = handleWorkHistoryRequest(mockAction)
+        generator = handleExperienceRequest(mockAction)
       })
 
       it('should get the work history from the work history service', () => {
-        expect(generator.next().value).toEqual(call(workHistoryService.getWorkHistory))
+        expect(generator.next().value).toEqual(call(experienceService.getExperience))
       })
 
       it('should dispatch that the work history request failed', () => {
         expect(generator.throw(mockError).value).toEqual(put(
-          requestWorkHistoryFailure(mockError)
+          requestExperienceFailure(mockError)
         ))
       })
 

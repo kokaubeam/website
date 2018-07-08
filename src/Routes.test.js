@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { shallow } from 'enzyme'
 
 import Home from './components/Home'
-import WorkHistory from './components/WorkHistory'
+import Experience from './components/Experience'
 import Stack from './components/Stack'
 import NotFound from './components/NotFound'
 
@@ -40,16 +40,16 @@ describe('Routes', () => {
     })
   })
 
-  describe('/work-history', () => {
+  describe('/experience', () => {
     let route
 
     beforeAll(() => {
       route = component.find(Route)
-        .filterWhere(n => n.prop('path') === '/work-history')
+        .filterWhere(n => n.prop('path') === '/experience')
     })
 
-    it('should render the WorkHistory component', () => {
-      expect(route.prop('component')).toBe(WorkHistory)
+    it('should render the Experience component', () => {
+      expect(route.prop('component')).toBe(Experience)
     })
 
     it('should match the exact path', () => {

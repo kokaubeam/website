@@ -1,16 +1,16 @@
-.WorkHistoryItem {
+.ExperienceItem {
   position: relative;
   padding-left: 44px;
 }
 
-.WorkHistoryItem .logo,
-.WorkHistoryItem .name,
-.WorkHistoryItem .position,
-.WorkHistoryItem .timespan {
+.ExperienceItem .logo,
+.ExperienceItem .name,
+.ExperienceItem .position,
+.ExperienceItem .timespan {
   display: block;
 }
 
-.WorkHistoryItem .logo {
+.ExperienceItem .logo {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,24 +20,24 @@
   width: 32px;
 }
 
-.WorkHistoryItem .logo img {
+.ExperienceItem .logo img {
   display: block;
   margin: auto;
   max-width: 32px;
   max-height: 32px;
 }
 
-.WorkHistoryItem .name {
+.ExperienceItem .name {
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 4px;
 }
 
-.WorkHistoryItem .position {
+.ExperienceItem .position {
   font-size: 14px;
 }
 
-.WorkHistoryItem .timespan {
+.ExperienceItem .timespan {
   position: absolute;
   top: 0;
   right: 0;
@@ -45,22 +45,22 @@
   color: #4A90E2;
 }
 
-.WorkHistoryItem .position,
-.WorkHistoryItem .description {
+.ExperienceItem .position,
+.ExperienceItem .description {
   color: rgba(255, 255, 255, 0.7)
 }
 
 @media (min-width: 768px) {
-  .WorkHistoryItem {
+  .ExperienceItem {
     padding-left: 80px;
   }
 
-  .WorkHistoryItem .logo {
+  .ExperienceItem .logo {
     height: 64px;
     width: 64px;
   }
 
-  .WorkHistoryItem .logo img {
+  .ExperienceItem .logo img {
     max-width: 64px;
     max-height: 64px;
   }

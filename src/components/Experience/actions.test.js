@@ -1,34 +1,34 @@
 import {
-  WORK_HISTORY_REQUEST,
-  WORK_HISTORY_REQUEST_SUCCESS,
-  WORK_HISTORY_REQUEST_FAILURE
+  EXPERIENCE_REQUEST,
+  EXPERIENCE_REQUEST_SUCCESS,
+  EXPERIENCE_REQUEST_FAILURE
 } from './constants'
 
 import {
-  requestWorkHistory,
-  requestWorkHistorySuccess,
-  requestWorkHistoryFailure
+  requestExperience,
+  requestExperienceSuccess,
+  requestExperienceFailure
 } from './actions'
 
-describe('WorkHistory actions', () => {
-  describe('#requestWorkHistory', () => {
+describe('Experience actions', () => {
+  describe('#requestExperience', () => {
     let action
 
     beforeAll(() => {
-      action = requestWorkHistory()
+      action = requestExperience()
     })
 
     it('should create the action', () => {
       expect(action).toEqual({
-        type: WORK_HISTORY_REQUEST
+        type: EXPERIENCE_REQUEST
       })
     })
   })
 
-  describe('#requestWorkHistorySuccess', () => {
+  describe('#requestExperienceSuccess', () => {
     let action
 
-    const mockWorkHistory = [{
+    const mockExperience = [{
       name: 'Aperture Science',
       position: 'Test Subject',
       description: 'Ate cake and tested Aperature Science products.',
@@ -38,29 +38,29 @@ describe('WorkHistory actions', () => {
     }]
 
     beforeAll(() => {
-      action = requestWorkHistorySuccess(mockWorkHistory)
+      action = requestExperienceSuccess(mockExperience)
     })
 
     it('should create the action', () => {
       expect(action).toEqual({
-        type: WORK_HISTORY_REQUEST_SUCCESS,
-        workHistory: mockWorkHistory
+        type: EXPERIENCE_REQUEST_SUCCESS,
+        experience: mockExperience
       })
     })
   })
 
-  describe('#requestWorkHistoryFailure', () => {
+  describe('#requestExperienceFailure', () => {
     let action
 
     const mockError = new Error('Everything is fine! Nothing is ruined!')
 
     beforeAll(() => {
-      action = requestWorkHistoryFailure(mockError)
+      action = requestExperienceFailure(mockError)
     })
 
     it('should create the action', () => {
       expect(action).toEqual({
-        type: WORK_HISTORY_REQUEST_FAILURE,
+        type: EXPERIENCE_REQUEST_FAILURE,
         error: mockError
       })
     })

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import ReactMarkdown from 'react-markdown'
-import './WorkHistoryItem.css'
+import './ExperienceItem.css'
 
-export const WorkHistoryItem = ({ history }) => (
-  <div className="WorkHistoryItem">
+export const ExperienceItem = ({ history }) => (
+  <div className="ExperienceItem">
     <span className="logo"><img src={history.logo} alt={history.name}/></span>
     <span className="name">{history.name}</span>
     <span className="position">{history.position}</span>
@@ -14,7 +14,7 @@ export const WorkHistoryItem = ({ history }) => (
   </div>
 )
 
-WorkHistoryItem.propTypes = {
+ExperienceItem.propTypes = {
   history: PropTypes.shape({
     name: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
@@ -25,4 +25,4 @@ WorkHistoryItem.propTypes = {
   })
 }
 
-export default WorkHistoryItem
+export default ExperienceItem

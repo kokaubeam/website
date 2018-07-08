@@ -2,7 +2,7 @@ import { all } from 'redux-saga/effects'
 import { saga as analyticsSaga } from './components/Analytics'
 import { saga as headerSaga } from './components/Header'
 import { saga as stackSaga } from './components/Stack'
-import { saga as workHistorySaga } from './components/WorkHistory'
+import { saga as experienceSaga } from './components/Experience'
 
 import rootSaga from './saga'
 
@@ -18,7 +18,7 @@ describe('Root saga', () => {
       analyticsSaga(),
       headerSaga(),
       stackSaga(),
-      workHistorySaga()
+      experienceSaga()
     ]))
   })
 

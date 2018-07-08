@@ -7,7 +7,7 @@ import './PrimaryNav.css'
 export const PrimaryNav = props => (
   <nav {...props} className={classNames('PrimaryNav', props.className)}>
     <ul>
-      <li><NavLink to="/work-history">History</NavLink></li>
+      <li><NavLink to="/experience">Experience</NavLink></li>
       <li><NavLink to="/stack">Stack</NavLink></li>
     </ul>
   </nav>

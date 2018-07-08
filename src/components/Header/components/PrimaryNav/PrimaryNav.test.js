@@ -24,8 +24,8 @@ describe('PrimaryNav component', () => {
     expect(component.prop('className')).toBe('PrimaryNav')
   })
 
-  it('should a link to the work-history page', () => {
-    const link = component.find(NavLink).filterWhere(n => n.prop('to') === '/work-history')
+  it('should a link to the experience page', () => {
+    const link = component.find(NavLink).filterWhere(n => n.prop('to') === '/experience')
     expect(link).toExist()
   })
 
