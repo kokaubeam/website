@@ -47,7 +47,7 @@ export default [{
 }, {
   name: 'The Objective Company',
   position: 'Owner',
-  description: 'Start-up company founded to organize freelance projects into a formal business entity. Communicated directly with clients and independent contractors to extend the reach of their talents and services through technology.',
+  description: 'Organized freelance projects into a formal business entity. Communicated directly with clients and independent contractors. Developed apps and websites for a variety of industries and technical challenges.',
   logo: objectiveCompanyLogo,
   start: new Date('Jun 1, 2009'),
   end: new Date('Aug 1, 2016')
