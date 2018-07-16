@@ -28,13 +28,12 @@
 
 .HomePage .introduction {
   margin: 0 auto;
-  width: 80%;
-  max-width: 440px;
+  max-width: 500px;
 }
 
 .HomePage .greeting {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 @media (min-width: 224px) {
@@ -45,14 +44,14 @@
 
 @media (min-width: 768px) {
   .HomePage .greeting {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 1024px) {
   .HomePage .laptop {
-    margin-bottom: -128px;
-    width: 922px;
-    height: 414px;
+    margin-bottom: -160px;
+    width: 1024px;
+    height: 460px;
   }
 }
