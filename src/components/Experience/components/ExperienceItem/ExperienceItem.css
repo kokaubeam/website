@@ -1,6 +1,7 @@
 .ExperienceItem {
   position: relative;
   padding-left: 44px;
+  margin-bottom: 32px;
 }
 
 .ExperienceItem .logo,
@@ -41,8 +42,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 14px;
-  color: #4A90E2;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .ExperienceItem .position,
