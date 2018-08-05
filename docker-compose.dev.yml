@@ -4,8 +4,6 @@ services:
     build:
       context: ./
       target: dev
-    environment:
-      - REACT_APP_API_BASE_URL=http://localhost:3000
     ports:
       - '3000:3000'
       - '35729:35729'
