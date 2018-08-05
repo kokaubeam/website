@@ -10,10 +10,3 @@
   left: 0;
   z-index: 500;
 }
-
-@media (min-width: 1440px) {
-  .Page {
-    width: 1440px;
-    margin: 0 auto;
-  }
-}

@@ -90,3 +90,10 @@
     text-align: left;
   }
 }
+
+@media (min-width: 1440px) {
+  .ExperiencePage {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}

@@ -79,3 +79,10 @@
     box-sizing: border-box;
   }
 }
+
+@media (min-width: 1440px) {
+  .StackPage {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}

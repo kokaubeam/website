@@ -5,3 +5,10 @@
 .NotFoundPage p {
   color: rgba(255, 255, 255, 0.7);
 }
+
+@media (min-width: 1440px) {
+  .NotFoundPage {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
