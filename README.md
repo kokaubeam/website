@@ -13,7 +13,7 @@ Visit the site at https://jonathan.obj.co.
 git clone git@github.com:kokaubeam/website.git
 cd website
 
-docker-compose up -f docker-compose.dev.yml -d
+docker-compose -f docker-compose.dev.yml up -d
 ```
 
 Navigate your browser to https://localhost:3000.
