@@ -18,6 +18,10 @@ docker-compose -f docker-compose.dev.yml up -d
 
 Navigate your browser to https://localhost:3000.
 
+### Using Windows?
+
+Add `CHOKIDAR_USEPOLLING=true` to the `.env` file, at least until Windows learns to detect file changes.
+
 ## Running Tests
 
 ```
