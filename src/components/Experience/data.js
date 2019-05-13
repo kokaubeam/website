@@ -8,6 +8,7 @@ import pluralsightLogo from './media/pluralsight.svg'
 import datamarkLogo from './media/datamark.svg'
 import objectivePlayLogo from './media/objective-play.svg'
 import seboMarketingLogo from './media/sebo-marketing.svg'
+import podiumLogo from './media/podium.svg'
 
 export default [{
   name: 'Ancestry.com',
@@ -40,9 +41,16 @@ export default [{
 }, {
   name: 'Berkadia',
   position: 'Team Lead, Senior Software Engineer',
-  description: 'Developing the [rediq.io](https://rediq.io) experience to provide valuations and comparisons of multi-family property investments.',
+  description: 'Development of the [rediq.io](https://rediq.io) experience to provide valuations and comparisons of multi-family property investments.',
   logo: berkadiaLogo,
   start: new Date('Oct 1, 2017'),
+  end: new Date('Nov 26, 2018')
+}, {
+  name: 'Podium',
+  position: 'Senior Software Engineer',
+  description: 'Developing the Podium - Interaction Platform mobile app for [iOS](https://itunes.apple.com/us/app/podium-interaction-platform/id971412288?mt=8) and [Android](https://play.google.com/store/apps/details?id=com.ionicframework.ionicapp410897&hl=en_US).',
+  logo: podiumLogo,
+  start: new Date('Nov 26, 2018'),
   end: new Date()
 }, {
   name: 'The Objective Company',
