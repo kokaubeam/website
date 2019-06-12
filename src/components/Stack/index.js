@@ -1,10 +1,3 @@
-import StackPage from './components/StackPage'
-import reducer from './reducer'
-import saga from './saga'
+import Stack from './Stack'
 
-export default StackPage
-
-export {
-  saga,
-  reducer
-}
+export default Stack

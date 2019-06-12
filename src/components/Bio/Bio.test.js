@@ -1,32 +1,27 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import meImage from './media/me.jpg'
+import { render } from 'test-utils'
+import { axe } from 'jest-axe'
+import meImage from '../../media/me.jpg'
 
-import { Bio } from './Bio'
+import Bio from './Bio'
 
-describe('Bio component', () => {
-  let component
+test('content is accessible', async () => {
+  const { container } = render(<Bio />)
+  const results = await axe(container.innerHTML)
 
-  beforeAll(() => {
-    component = shallow(<Bio />)
-  })
+  expect(results).toHaveNoViolations()
+})
 
-  it('should render', () => {
-    expect(component).toExist()
-  })
+test('renders the profile picture', () => {
+  const { getByAltText } = render(<Bio />)
 
-  it('should render a bio image', () => {
-    const img = component.find('img').filterWhere(n => n.prop('src') === meImage)
-    expect(img).toExist()
-  })
+  const profilePicture = getByAltText(`Jonathan Davis`)
+  expect(profilePicture).toHaveAttribute('src', meImage)
+})
 
-  it('should render the title', () => {
-    const title = component.find('h1')
-    expect(title.text()).toContain('Husband, Father, Technology Innovator')
-  })
+test('renders the content', () => {
+  const { getByText } = render(<Bio />)
 
-  it('should render the content', () => {
-    expect(component.text()).toContain('I love thoughts and ideas, enjoy conversation and people, and am driven by learning and creativity.')
-    expect(component.text()).toContain('Professionally, I thrive in technology and exploring its ever evolving potential to transform the way we live and connect.')
-  })
+  getByText(/I love thoughts and ideas/)
+  getByText(/Professionally, I thrive in technology/)
 })

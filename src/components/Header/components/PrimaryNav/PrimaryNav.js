@@ -1,20 +1,27 @@
 import React from 'react'
-import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
-import './PrimaryNav.css'
+import { Container, NavList, NavListItem, StyledNavLink } from './styles.js'
+
+const links = [
+  {
+    to: '/experience',
+    label: 'Experience',
+  },
+  {
+    to: '/stack',
+    label: 'Stack',
+  },
+]
 
 export const PrimaryNav = props => (
-  <nav {...props} className={classNames('PrimaryNav', props.className)}>
-    <ul>
-      <li><NavLink to="/experience">Experience</NavLink></li>
-      <li><NavLink to="/stack">Stack</NavLink></li>
-    </ul>
-  </nav>
+  <Container {...props}>
+    <NavList>
+      {links.map((link, index) => (
+        <NavListItem key={index}>
+          <StyledNavLink to={link.to}>{link.label}</StyledNavLink>
+        </NavListItem>
+      ))}
+    </NavList>
+  </Container>
 )
-
-PrimaryNav.propTypes = {
-  className: PropTypes.string
-}
 
 export default PrimaryNav

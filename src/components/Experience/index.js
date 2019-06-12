@@ -1,10 +1,3 @@
-import ExperiencePage from './components/ExperiencePage'
-import reducer from './reducer'
-import saga from './saga'
+import Experience from './Experience'
 
-export default ExperiencePage
-
-export {
-  reducer,
-  saga
-}
+export default Experience

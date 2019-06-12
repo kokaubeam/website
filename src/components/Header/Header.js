@@ -1,46 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { headerNavToggle } from './actions'
-import { isNavOpenSelector } from './selectors'
-import PrimaryNav from './components/PrimaryNav'
-import SocialNav from './components/SocialNav'
-import menuIcon from './media/menuIcon.svg'
-import './Header.css'
+import {
+  CompactBrandLink,
+  Container,
+  ExpandedBrandLink,
+  MenuIcon,
+  PrimaryNavButton,
+  StyledPrimaryNav,
+  StyledSocialNav,
+} from './styles.js'
 
-export const Header = ({ isNavOpen, toggleNav, className }) => (
-  <header className={classNames('Header', { open: isNavOpen }, className)}>
-    <Link className="brand regular" to="/">Jonathan Davis</Link>
-    <Link className="brand compact" to="/">JD</Link>
+export const Header = ({ onToggleNavigation, ...props }) => {
+  const [isNavOpen, setIsNavOpen] = useState(false)
 
-    <button
-      id="primary-nav-toggle"
-      type="button"
-      onClick={toggleNav}
-      aria-haspopup="true"
-      aria-controls="primary-nav">
-      <img src={menuIcon} alt="Navigation" />
-    </button>
+  return (
+    <Container isNavOpen={isNavOpen} data-testid='header' {...props}>
+      <ExpandedBrandLink to='/'>Jonathan Davis</ExpandedBrandLink>
+      <CompactBrandLink to='/'>JD</CompactBrandLink>
 
-    <PrimaryNav id="primary-nav" className="nav primary" aria-labelledby="primary-nav-toggle" />
-    <SocialNav className="nav social" />
-  </header>
-)
+      <PrimaryNavButton
+        onClick={() => {
+          setIsNavOpen(!isNavOpen)
+          onToggleNavigation && onToggleNavigation(!isNavOpen)
+        }}
+        id='primary-nav-toggle'
+        aria-haspopup='true'
+        aria-controls='primary-nav'
+      >
+        <MenuIcon alt='Navigation' />
+      </PrimaryNavButton>
 
-Header.propTypes = {
-  isNavOpen: PropTypes.bool,
-  toggleNav: PropTypes.func.isRequired,
-  className: PropTypes.string
+      <StyledPrimaryNav
+        id='primary-nav'
+        aria-labelledby='primary-nav-toggle'
+        rolee='menu'
+        isNavOpen={isNavOpen}
+      />
+      <StyledSocialNav />
+    </Container>
+  )
 }
 
-export const mapStateToProps = state => ({
-  isNavOpen: isNavOpenSelector(state)
-})
+Header.propTypes = {
+  onToggleNavigation: PropTypes.func,
+}
 
-export const mapDispatchToProps = dispatch => ({
-  toggleNav: () => dispatch(headerNavToggle())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header

@@ -1,9 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Normalize } from 'styled-normalize'
+import { GlobalStyle } from './styles'
 
 import App from './App'
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <>
+    <Normalize />
+    <GlobalStyle />
+    <Router>
+      <App />
+    </Router>
+  </>,
+  document.getElementById('root'),
 )

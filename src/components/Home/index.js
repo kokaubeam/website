@@ -1,3 +1,3 @@
-import HomePage from './components/HomePage'
+import Home from './Home'
 
-export default HomePage
+export default Home
