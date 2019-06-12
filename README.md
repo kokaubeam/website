@@ -13,7 +13,7 @@ Visit the site at https://jonathan.obj.co.
 git clone git@github.com:kokaubeam/website.git
 cd website
 
-docker-compose -f docker-compose.dev.yml up -d
+docker-compose up -d
 ```
 
 Navigate your browser to https://localhost:3000.
@@ -26,5 +26,5 @@ to detect file changes.
 ## Running Tests
 
 ```
-docker-compose -f docker-compose.dev.yml run website npm run test
+docker-compose run website yarn test
 ```
