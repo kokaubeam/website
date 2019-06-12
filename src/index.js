@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Normalize } from 'styled-normalize'
 import { GlobalStyle } from './styles'
 
-import App from './App'
+import App from './components/App'
 
 ReactDOM.render(
   <>
