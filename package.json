@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@testing-library/cypress": "^4.0.3",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
+    "cypress": "^3.3.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "jest-axe": "^3.1.1",
@@ -32,10 +34,16 @@
     "validate": "npm run lint && npm run prettier -- --list-different"
   },
   "eslintConfig": {
+    "env": {
+      "cypress/globals": true
+    },
     "extends": [
       "eslint:recommended",
       "react-app",
       "eslint-config-prettier"
+    ],
+    "plugins": [
+      "eslint-plugin-cypress"
     ]
   },
   "prettier": {
