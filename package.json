@@ -39,6 +39,7 @@
     },
     "extends": [
       "eslint:recommended",
+      "plugin:cypress/recommended",
       "react-app",
       "eslint-config-prettier"
     ],
