@@ -17,3 +17,9 @@ test('renders the content', () => {
   getByText(/page not found/i)
   getByText(/Hmm\.\.\. can't find that page./)
 })
+
+test('sets the title', () => {
+  renderWithRouter(<NotFound />)
+
+  expect(document.title).toBe('Not Found | Jonathan Davis')
+})

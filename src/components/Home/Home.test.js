@@ -10,3 +10,9 @@ test('content is accessible', async () => {
 
   expect(results).toHaveNoViolations()
 })
+
+test('sets the title', () => {
+  render(<Home />)
+
+  expect(document.title).toBe('Jonathan Davis')
+})

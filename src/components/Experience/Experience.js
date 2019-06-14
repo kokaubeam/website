@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import ExperienceList from './components/ExperienceList'
 import { Container, Heading } from './styles'
@@ -19,6 +19,10 @@ const Experience = () => {
     experience.sort((a, b) => b.start - a.start),
   )
   const [yearsOfExperience] = useState(getYearsOfExperience(sortedExperience))
+
+  useEffect(() => {
+    document.title = `${yearsOfExperience} Years of Experience | Jonathan Davis`
+  })
 
   return (
     <Container data-testid='experience'>

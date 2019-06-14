@@ -58,3 +58,9 @@ test('tag groups are in the expected order', () => {
     expect(toolGroup).toHaveTextContent(expectTagGroupOrder[index])
   })
 })
+
+test('sets the title', () => {
+  render(<Stack />)
+
+  expect(document.title).toBe('The Stack | Jonathan Davis')
+})

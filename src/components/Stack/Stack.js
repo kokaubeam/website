@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ToolList from './components/ToolList'
 import tools from './data/tools'
 import { Container, Heading, ToolGroup, ToolGroupHeading } from './styles'
@@ -33,15 +33,21 @@ const toolGroups = tagGroupSortOrder.reduce((toolGroups, tag) => {
   return toolGroups
 }, [])
 
-export default () => (
-  <Container data-testid='stack'>
-    <Heading>The Stack</Heading>
+export default () => {
+  useEffect(() => {
+    document.title = 'The Stack | Jonathan Davis'
+  })
 
-    {toolGroups.map(stackToolGroup => (
-      <ToolGroup key={stackToolGroup.name} data-testid='tool-group'>
-        <ToolGroupHeading>{stackToolGroup.name}</ToolGroupHeading>
-        <ToolList tools={stackToolGroup.tools} />
-      </ToolGroup>
-    ))}
-  </Container>
-)
+  return (
+    <Container data-testid='stack'>
+      <Heading>The Stack</Heading>
+
+      {toolGroups.map(stackToolGroup => (
+        <ToolGroup key={stackToolGroup.name} data-testid='tool-group'>
+          <ToolGroupHeading>{stackToolGroup.name}</ToolGroupHeading>
+          <ToolList tools={stackToolGroup.tools} />
+        </ToolGroup>
+      ))}
+    </Container>
+  )
+}

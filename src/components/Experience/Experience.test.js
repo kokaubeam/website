@@ -59,3 +59,13 @@ test('renders the most recent experience first', () => {
   expect(experience[0]).toHaveTextContent(/Black Mesa/)
   expect(experience[1]).toHaveTextContent(/Aperture Science/)
 })
+
+test('sets the title', () => {
+  MockDate.set(new Date('Dec 15, 2010'))
+
+  render(<Experience />)
+
+  expect(document.title).toBe('70 Years of Experience | Jonathan Davis')
+
+  MockDate.reset()
+})

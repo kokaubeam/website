@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Container,
   Greeting,
@@ -8,28 +8,34 @@ import {
   ProfilePicture,
 } from './styles'
 
-export const HomePage = () => (
-  <Container data-testid='home'>
-    <ProfilePicture />
+export const HomePage = () => {
+  useEffect(() => {
+    document.title = 'Jonathan Davis'
+  })
 
-    <Heading>Husband, Father, Technology&nbsp;Innovator</Heading>
+  return (
+    <Container data-testid='home'>
+      <ProfilePicture />
 
-    <LaptopImage />
+      <Heading>Husband, Father, Technology&nbsp;Innovator</Heading>
 
-    <Introduction>
-      <Greeting>Hi, I’m Jonathan.</Greeting>
+      <LaptopImage />
 
-      <p>
-        I love thoughts and ideas, enjoy conversation and people, and am driven
-        by learning and creativity.
-      </p>
+      <Introduction>
+        <Greeting>Hi, I’m Jonathan.</Greeting>
 
-      <p>
-        Professionally, I thrive in technology and exploring its ever evolving
-        potential to transform the way we live and connect.
-      </p>
-    </Introduction>
-  </Container>
-)
+        <p>
+          I love thoughts and ideas, enjoy conversation and people, and am
+          driven by learning and creativity.
+        </p>
+
+        <p>
+          Professionally, I thrive in technology and exploring its ever evolving
+          potential to transform the way we live and connect.
+        </p>
+      </Introduction>
+    </Container>
+  )
+}
 
 export default HomePage
