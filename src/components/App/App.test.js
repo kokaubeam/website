@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderWithRouter, fireEvent, getByText } from 'test-utils'
+import { renderWithRouter, fireEvent, getByText } from 'utils/test-utils'
 
 import { App } from './App'
 test('navigation between routes', () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderWithRouter } from 'test-utils'
+import { renderWithRouter } from 'utils/test-utils'
 import { axe } from 'jest-axe'
 
 import Header from './Header'
