@@ -29,7 +29,7 @@ test('navigation between routes', () => {
   expect(queryByTestId('bio')).toBeInTheDocument()
 })
 
-test.only("renders Not Found for routes that don't exist", () => {
+test("renders Not Found for routes that don't exist", () => {
   const { getByTestId, queryByTestId } = renderWithRouter(<App />, {
     route: '/does-not-exist',
   })
