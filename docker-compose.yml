@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 services:
   website:
     build:
@@ -8,5 +8,5 @@ services:
       - '3000:3000'
       - '35729:35729'
     volumes:
-      - ./:/app
+      - ./:/app:cached
       - /app/node_modules
