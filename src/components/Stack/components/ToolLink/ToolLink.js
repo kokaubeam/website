@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ToolIcon, ToolIconContainer, ToolName, StyledLink } from './styles.js'
+import { ToolIcon, ToolIconContainer, ToolName, StyledLink } from './styles'
 
 export const ToolLink = ({ tool }) => (
   <StyledLink

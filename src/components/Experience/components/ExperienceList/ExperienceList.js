@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ExperienceDetails from '../ExperienceDetails'
-import { StyledList, StyledListItem } from './styles.js'
+import { StyledList, StyledListItem } from './styles'
 
 export const ExperienceList = ({ experience }) => (
   <StyledList>

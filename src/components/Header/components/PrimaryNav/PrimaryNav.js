@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, NavList, NavListItem, StyledNavLink } from './styles.js'
+import { Container, NavList, NavListItem, StyledNavLink } from './styles'
 
 const links = [
   {

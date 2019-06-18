@@ -8,7 +8,7 @@ import {
   PrimaryNavButton,
   StyledPrimaryNav,
   StyledSocialNav,
-} from './styles.js'
+} from './styles'
 
 export const Header = ({ onToggleNavigation, ...props }) => {
   const [isNavOpen, setIsNavOpen] = useState(false)
