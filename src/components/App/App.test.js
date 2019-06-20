@@ -2,6 +2,7 @@ import React from 'react'
 import { renderWithRouter, fireEvent, getByText } from 'utils/test-utils'
 
 import { App } from './App'
+
 test('navigation between routes', () => {
   const { getByTestId, queryByTestId } = renderWithRouter(<App />)
   const header = getByTestId('header')
