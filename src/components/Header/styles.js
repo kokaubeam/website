@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import PrimaryNav from './components/PrimaryNav'
+import Nav from './components/Nav'
 import SocialNav from './components/SocialNav'
 import menuIcon from './media/menuIcon.svg'
 
@@ -13,7 +13,7 @@ export const Container = styled.header`
   transition: height 500ms ease;
 `
 
-export const StyledPrimaryNav = styled(PrimaryNav)`
+export const StyledNav = styled(Nav)`
   display: ${({ isNavOpen }) => (isNavOpen ? 'block' : 'none')};
 
   @media (min-width: 768px) {
@@ -79,7 +79,7 @@ export const CompactBrandLink = styled(BrandLink)`
   }
 `
 
-export const PrimaryNavButton = styled.button.attrs({
+export const ToggleNavButton = styled.button.attrs({
   type: 'button',
 })`
   background: none;

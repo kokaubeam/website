@@ -12,7 +12,7 @@ const links = [
   },
 ]
 
-export const PrimaryNav = props => (
+export const Nav = props => (
   <Container {...props}>
     <NavList>
       {links.map((link, index) => (
@@ -24,4 +24,4 @@ export const PrimaryNav = props => (
   </Container>
 )
 
-export default PrimaryNav
+export default Nav

@@ -5,8 +5,8 @@ import {
   Container,
   ExpandedBrandLink,
   MenuIcon,
-  PrimaryNavButton,
-  StyledPrimaryNav,
+  ToggleNavButton,
+  StyledNav,
   StyledSocialNav,
 } from './styles'
 
@@ -18,7 +18,7 @@ export const Header = ({ onToggleNavigation, ...props }) => {
       <ExpandedBrandLink to='/'>Jonathan Davis</ExpandedBrandLink>
       <CompactBrandLink to='/'>JD</CompactBrandLink>
 
-      <PrimaryNavButton
+      <ToggleNavButton
         onClick={() => {
           setIsNavOpen(!isNavOpen)
           onToggleNavigation && onToggleNavigation(!isNavOpen)
@@ -28,9 +28,9 @@ export const Header = ({ onToggleNavigation, ...props }) => {
         aria-controls='primary-nav'
       >
         <MenuIcon alt='Navigation' />
-      </PrimaryNavButton>
+      </ToggleNavButton>
 
-      <StyledPrimaryNav
+      <StyledNav
         id='primary-nav'
         aria-labelledby='primary-nav-toggle'
         rolee='menu'
